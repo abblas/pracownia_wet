@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_LastSelectedProfileId>E:\WSB\Przychodnia\Properties\PublishProfiles\FolderProfile.pubxml</_LastSelectedProfileId>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Update="Menu_Pacjenci.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Menu_Wlascicieli.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Przychodnia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Menu_Wizyty.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>

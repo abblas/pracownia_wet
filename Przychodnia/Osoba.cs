@@ -1,0 +1,43 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms.Design;
+
+namespace Przychodnia
+{
+    public class Osoba
+    {
+        public string id;
+        public string imie;
+        public string nazwisko;
+        public string plec;
+        public string nrTelefonu;
+        public string mail;
+
+        public Osoba()
+        {
+
+        }
+        public Osoba(string imie)
+        {
+            this.imie = imie;
+        }
+        public Osoba(string imie, string nazwisko)
+        {
+            this.imie = imie;
+            this.nazwisko = nazwisko;
+        }
+        public Osoba(string id, string imie, string nazwisko, string plec, string nrTelefonu, string mail) : this(imie, nazwisko) 
+        {
+            this.id = id;
+            this.imie = imie;
+            this.nazwisko = nazwisko;   
+            this.plec = plec;
+            this.nrTelefonu = nrTelefonu;
+            this.mail = mail;
+
+        }
+    }
+}
