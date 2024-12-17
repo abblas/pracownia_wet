@@ -17,7 +17,6 @@ namespace Przychodnia
         {
             InitializeComponent();
             ustawieniaDataGridView_listaWizyt();
-            //InicjalizujDane();
         }
         private List<Wizyta> wizyty = new List<Wizyta>();
         private List<Pacjent> pacjenci = new List<Pacjent>();
@@ -31,19 +30,19 @@ namespace Przychodnia
                 this.StartPosition = FormStartPosition.Manual;
                 this.Location = drugiekran.WorkingArea.Location; // Początek obszaru roboczego monitora
                 this.Size = drugiekran.WorkingArea.Size;
-                dateTimePicker_dataWizyty.Format = DateTimePickerFormat.Custom;
-                dateTimePicker_dataWizyty.MinDate = DateTime.Today;
-                dateTimePicker_dataWizyty.CustomFormat = " "; // Puste pole na starcie
-                dateTimePicker_godzinaWizyty.Format = DateTimePickerFormat.Custom;
-                dateTimePicker_godzinaWizyty.CustomFormat = " "; // Puste pole na starcie
-                dateTimePicker_dataEdytowanejWizyty.Format = DateTimePickerFormat.Custom;
-                dateTimePicker_dataEdytowanejWizyty.MinDate = DateTime.Today;
-                dateTimePicker_dataEdytowanejWizyty.CustomFormat = " "; // Puste pole na starcie
-                dateTimePicker_godzinaEdytowanejWizyty.Format = DateTimePickerFormat.Custom;
-                dateTimePicker_godzinaEdytowanejWizyty.CustomFormat = " "; // Puste pole na starcie
-                OdczytajWizytyZPliku(@"C:\Users\Luke\Desktop\wizyty.txt");
-                dataGridView_listaWizyt.SelectionChanged += new EventHandler(dataGridView_listaWizyt_SelectionChanged);
             }
+            dateTimePicker_dataWizyty.Format = DateTimePickerFormat.Custom;
+            dateTimePicker_dataWizyty.MinDate = DateTime.Today;
+            dateTimePicker_dataWizyty.CustomFormat = " "; // Puste pole na starcie
+            dateTimePicker_godzinaWizyty.Format = DateTimePickerFormat.Custom;
+            dateTimePicker_godzinaWizyty.CustomFormat = " "; // Puste pole na starcie
+            dateTimePicker_dataEdytowanejWizyty.Format = DateTimePickerFormat.Custom;
+            dateTimePicker_dataEdytowanejWizyty.MinDate = DateTime.Today;
+            dateTimePicker_dataEdytowanejWizyty.CustomFormat = " "; // Puste pole na starcie
+            dateTimePicker_godzinaEdytowanejWizyty.Format = DateTimePickerFormat.Custom;
+            dateTimePicker_godzinaEdytowanejWizyty.CustomFormat = " "; // Puste pole na starcie
+            OdczytajWizytyZPliku(@"C:\Users\Luke\Desktop\wizyty.txt");
+            dataGridView_listaWizyt.SelectionChanged += new EventHandler(dataGridView_listaWizyt_SelectionChanged);
         }
         private void btn_ListaWizyt_Click(object sender, EventArgs e)
         {
@@ -60,6 +59,7 @@ namespace Przychodnia
         private void btn_DodajWizyte_Click(object sender, EventArgs e)
         {
             PobierzListePacjentow();
+            PobierzListeLekarzy();
             wyczyscPola();
             label_NowaWizyta.Visible = true;
             panel_Wizyty.Visible = false;
@@ -108,7 +108,7 @@ namespace Przychodnia
             DateTime godzinaWizyty = dateTimePicker_godzinaWizyty.Value; // Godzina z DateTimePicker
             string pacjentText = comboBox_Pacjent.Text;
             string wlascicielText = comboBox_wlasciciel.Text;
-            string lekarzText = textBox_Lekarz.Text;
+            string lekarzText = comboBox_lekarz.Text;
 
             // Rozdzielamy na imię i nazwisko
             string[] daneWlasciciela = wlascicielText.Split(' ');
@@ -160,14 +160,14 @@ namespace Przychodnia
             dateTimePicker_godzinaWizyty.CustomFormat = " ";
             comboBox_Pacjent.SelectedIndex = -1;
             comboBox_wlasciciel.Text = string.Empty;
-            textBox_Lekarz.Text = string.Empty;
+            comboBox_lekarz.SelectedIndex = -1;
             textBox_idEdytowanejWizyty.Text = string.Empty;
             comboBox_typEdytowanejWizyty.SelectedIndex = -1;
             dateTimePicker_dataEdytowanejWizyty.CustomFormat = " ";
             dateTimePicker_godzinaEdytowanejWizyty.CustomFormat = " ";
             comboBox_pacjentEdytowanejWizyty.SelectedIndex = -1;
             comboBox_wlascicielEdytowanejWizyty.Text = string.Empty;
-            textBox_lekarzEdytowanejWizyty.Text = string.Empty;
+            comboBox_lekarzEdytowanejWizyty.SelectedIndex = -1;
         }
         private void zwiekszIdWizyty()
         {
@@ -363,13 +363,14 @@ namespace Przychodnia
                 string wlasciciel = wybranyWiersz.Cells[5].Value.ToString();
                 comboBox_wlascicielEdytowanejWizyty.Text = wlasciciel;
                 string lekarz = wybranyWiersz.Cells[6].Value.ToString();
-                textBox_lekarzEdytowanejWizyty.Text = lekarz;
+                comboBox_lekarzEdytowanejWizyty.Text = lekarz;
             }
         }
         private void btn_edycjaWizyty_Click(object sender, EventArgs e)
         {
             comboBox_wlasciciel.Text = string.Empty;
             PobierzListePacjentow();
+            PobierzListeLekarzy();
             panel_edycjaWizyty.Visible = true;
             label_EdycjaWizyty.Visible = true;
             pobierzWartosciDoEdycji();
@@ -383,7 +384,7 @@ namespace Przychodnia
             DateTime godzinaWizyty = dateTimePicker_godzinaEdytowanejWizyty.Value; // Godzina z DateTimePicker
             string pacjentText = comboBox_pacjentEdytowanejWizyty.Text;
             string wlascicielText = comboBox_wlascicielEdytowanejWizyty.Text;
-            string lekarzText = textBox_lekarzEdytowanejWizyty.Text;
+            string lekarzText = comboBox_lekarzEdytowanejWizyty.Text;
 
             // Rozdzielamy na imię i nazwisko
             string[] daneWlasciciela = wlascicielText.Split(' ');
@@ -466,6 +467,28 @@ namespace Przychodnia
                 return klienci;
             }
         }
+        public class WczytywanieLekarzy
+        {
+            public static List<Lekarz> wczytajLekarzyZPliku(string sciezkaPliku)
+            {
+                List<Lekarz> lekarze = new List<Lekarz>();
+                string[] lekarzeText = File.ReadAllLines(sciezkaPliku);
+                for (int i = 1; i < lekarzeText.Length; i++)
+                {
+                    string l = lekarzeText[i];
+                    string[] nazwaLekarza = l.Split('-');
+
+                    if (nazwaLekarza.Length == 7)
+                    {
+                        string imie = nazwaLekarza[1];
+                        string nazwisko = nazwaLekarza[2];
+                        Lekarz lekarz = new Lekarz(imie, nazwisko);
+                        lekarze.Add(lekarz);
+                    }
+                }
+                return lekarze;
+            }
+        }
         private void wczytajPacjentowZPliku(string sciezkaPliku)
         {
             // Odczytujemy wszystkie linie z pliku
@@ -528,7 +551,7 @@ namespace Przychodnia
         }
         public class WczytywaniePacjentow
         {
-            public static List<Pacjent> WczytajPacjentowIZWlascicieli(string sciezkaPlikuPacjentow)
+            public static List<Pacjent> WczytajPacjentowIWlascicieli(string sciezkaPlikuPacjentow)
             {
                 List<Pacjent> pacjenci = new List<Pacjent>();
                 string[] pacjenciText = File.ReadAllLines(sciezkaPlikuPacjentow);
@@ -570,11 +593,19 @@ namespace Przychodnia
         }
         private void PobierzListePacjentow()
         {
-            List<Pacjent> pacjenci = WczytywaniePacjentow.WczytajPacjentowIZWlascicieli(@"C:\Users\Luke\Desktop\pacjenci.txt");
+            List<Pacjent> pacjenci = WczytywaniePacjentow.WczytajPacjentowIWlascicieli(@"C:\Users\Luke\Desktop\pacjenci.txt");
             comboBox_Pacjent.DataSource = pacjenci;
             comboBox_Pacjent.DisplayMember = "imie";  // Wyświetlanie imienia pacjenta
             comboBox_pacjentEdytowanejWizyty.DataSource = pacjenci;
             comboBox_pacjentEdytowanejWizyty.DisplayMember = "imie";  // Wyświetlanie imienia pacjenta
+        }
+        private void PobierzListeLekarzy()
+        {
+            List<Lekarz> lekarze = WczytywanieLekarzy.wczytajLekarzyZPliku(@"C:\Users\Luke\Desktop\lekarze.txt");
+            comboBox_lekarz.DataSource = lekarze;
+            comboBox_lekarz.DisplayMember = "imie" + "nazwisko";  // Wyświetlanie imienia pacjenta
+            comboBox_lekarzEdytowanejWizyty.DataSource = lekarze;
+            comboBox_lekarzEdytowanejWizyty.DisplayMember = "imie" + "nazwisko";  // Wyświetlanie imienia pacjenta
         }
     }
 }

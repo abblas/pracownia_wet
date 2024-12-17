@@ -80,6 +80,7 @@
             label_nrTelefonuEdytowanegoWlasciciela = new Label();
             btn_edycjaWlasciciela = new Button();
             btn_usuwanieWlasciciela = new Button();
+            label_wlascicielDoEdycji = new Label();
             panel_Wlasciciele.SuspendLayout();
             panel_NowyWlasciciel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView_listaWlascicieli).BeginInit();
@@ -635,21 +636,32 @@
             btn_usuwanieWlasciciela.Visible = false;
             btn_usuwanieWlasciciela.Click += btn_usuwanieWlasciciela_Click;
             // 
+            // label_wlascicielDoEdycji
+            // 
+            label_wlascicielDoEdycji.Font = new Font("Calibri", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            label_wlascicielDoEdycji.Location = new Point(339, 491);
+            label_wlascicielDoEdycji.Name = "label_wlascicielDoEdycji";
+            label_wlascicielDoEdycji.Size = new Size(472, 27);
+            label_wlascicielDoEdycji.TabIndex = 44;
+            label_wlascicielDoEdycji.Text = "Wybierz właściciela do edycji";
+            label_wlascicielDoEdycji.Visible = false;
+            // 
             // Menu_Wlascicieli
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(2092, 1019);
+            Controls.Add(label_wlascicielDoEdycji);
             Controls.Add(btn_usuwanieWlasciciela);
             Controls.Add(btn_edycjaWlasciciela);
             Controls.Add(panel_edycjaWlasciciela);
-            Controls.Add(label_ListaWlascicieli);
             Controls.Add(dataGridView_listaWlascicieli);
             Controls.Add(btn_cofnijDoMenuWlascicieli);
             Controls.Add(btn_menuGlowne);
             Controls.Add(label_VetAnimal);
             Controls.Add(panel_NowyWlasciciel);
             Controls.Add(panel_Wlasciciele);
+            Controls.Add(label_ListaWlascicieli);
             Name = "Menu_Wlascicieli";
             Text = "Właściciele";
             Load += Menu_Wlascicieli_Load;
@@ -712,5 +724,6 @@
         private Label label_nrTelefonuEdytowanegoWlasciciela;
         private Button btn_edycjaWlasciciela;
         private Button btn_usuwanieWlasciciela;
+        private Label label_wlascicielDoEdycji;
     }
 }

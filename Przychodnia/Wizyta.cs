@@ -10,7 +10,8 @@ namespace Przychodnia
 {
     public class Wizyta
     {
-        private static int licznik = 0; //Statyczny licznik dla numeracji wizyt
+        //Statyczny licznik dla numeracji wizyt
+        private static int licznik = 0;
         public string id;
         public string typWizyty;
         public DateTime dataWizyty;
@@ -18,15 +19,20 @@ namespace Przychodnia
         public Pacjent pacjent;
         public Lekarz lekarz;
         public Klient wlasciciel;
+        //Tworzenie konstruktora ze wszystkimi argumentami
         public Wizyta(string id, string typWizyty, DateTime dataWizyty, DateTime godzinaWizyty, Pacjent pacjent, Klient wlasciciel, Lekarz lekarz)
         {
+            //Sprawdzanie czy zmienna id jest pusta
             if (string.IsNullOrEmpty(id))
             {
+                //Jeśli tak to zmienną licznik zwięszkamy o 1
                 licznik++;
+                //I przypisujemy wartość zmiennej licznik + aktualny rok (np 1/2024) do zmiennej lokalnej id. 
                 this.id = licznik + "/" + DateTime.Now.Year;
             }
             else
             {
+                //W przeciwnym razie przypisz wartość ze zmiennej globalnej
                 this.id = id;
             }
             this.typWizyty = typWizyty;
@@ -35,8 +41,8 @@ namespace Przychodnia
             this.pacjent = pacjent;
             this.wlasciciel = wlasciciel;
             this.lekarz = lekarz;
-            
         }
+        //Tworzenie metody która wygeneruje nowy nr id po dodaniu nowej wizyty
         public static string GenerujNoweId()
         {
             licznik++;

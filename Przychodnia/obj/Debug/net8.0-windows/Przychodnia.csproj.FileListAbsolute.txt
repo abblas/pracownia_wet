@@ -17,3 +17,4 @@ C:\Users\Luke\source\repos\Przychodnia\obj\Debug\net8.0-windows\ref\Przychodnia.
 C:\Users\Luke\source\repos\Przychodnia\obj\Debug\net8.0-windows\Przychodnia.Menu_Wizyty.resources
 C:\Users\Luke\source\repos\Przychodnia\obj\Debug\net8.0-windows\Przychodnia.Menu_Pacjenci.resources
 C:\Users\Luke\source\repos\Przychodnia\obj\Debug\net8.0-windows\Przychodnia.Menu_Wlascicieli.resources
+C:\Users\Luke\source\repos\Przychodnia\obj\Debug\net8.0-windows\Przychodnia.Menu_Lekarze.resources

@@ -15,7 +15,9 @@ namespace Przychodnia
         {
             if (string.IsNullOrEmpty(id))
             {
+                
                 licznik++;
+
                 this.id = licznik.ToString();
             }
             else
@@ -47,27 +49,5 @@ namespace Przychodnia
             licznik++;
             return licznik.ToString();
         }
-        //public class WczytywanieKlientow
-        //{
-        //    public static List<Klient> wczytajKlientowZPliku(string sciezkaPliku)
-        //    {
-        //        List<Klient> klienci = new List<Klient>();
-        //        string[] klienciText = File.ReadAllLines(sciezkaPliku);
-        //        for (int i = 1; i < klienciText.Length; i++)
-        //        {
-        //            string k = klienciText[i];
-        //            string[] nazwaKlienta = k.Split('-');
-
-        //            if (nazwaKlienta.Length == 7)
-        //            {
-        //                string imie = nazwaKlienta[1];
-        //                string nazwisko = nazwaKlienta[2];
-        //                Klient klient = new Klient(imie, nazwisko);
-        //                klienci.Add(klient);
-        //            }
-        //        }
-        //        return klienci;
-        //    }
-        //}
     }
 }

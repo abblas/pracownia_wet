@@ -42,6 +42,7 @@ namespace Przychodnia
             dataGridView_listaWlascicieli.Visible = true;
             btn_cofnijDoMenuWlascicieli.Visible = true;
             panel_Wlasciciele.Visible = false;
+            label_ListaWlascicieli.Visible = true;
             dataGridView_listaWlascicieli.ClearSelection();
         }
         private void btn_DodajWłaściciela_Click(object sender, EventArgs e)
@@ -50,6 +51,7 @@ namespace Przychodnia
             panel_Wlasciciele.Visible = false;
             btn_cofnijDoMenuWlascicieli.Visible = true;
             dataGridView_listaWlascicieli.Visible = true;
+            label_ListaWlascicieli.Visible = true;
             dataGridView_listaWlascicieli.ClearSelection();
             int id = klienci.Count + 1;
             string autoId = id.ToString();
@@ -62,6 +64,7 @@ namespace Przychodnia
             btn_cofnijDoMenuWlascicieli.Visible = true;
             panel_Wlasciciele.Visible = false;
             btn_edycjaWlasciciela.Visible = true;
+            label_wlascicielDoEdycji.Visible = true;
             dataGridView_listaWlascicieli.ClearSelection();
         }
         private void btn_UsunWłaściciela_Click(object sender, EventArgs e)
@@ -69,6 +72,7 @@ namespace Przychodnia
             dataGridView_listaWlascicieli.Visible = true;
             btn_cofnijDoMenuWlascicieli.Visible = true;
             panel_Wlasciciele.Visible = false;
+            label_ListaWlascicieli.Visible = true;
             btn_usuwanieWlasciciela.Visible = true;
             dataGridView_listaWlascicieli.ClearSelection();
         }
@@ -235,6 +239,8 @@ namespace Przychodnia
             btn_edycjaWlasciciela.Visible = false;
             panel_edycjaWlasciciela.Visible = false;
             btn_usuwanieWlasciciela.Visible = false;
+            label_ListaWlascicieli.Visible = false;
+            label_wlascicielDoEdycji.Visible = false;  
         }
         private void btn_zapiszEdytowanegoWlasciciela_Click(object sender, EventArgs e)
         {

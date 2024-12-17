@@ -51,6 +51,12 @@ namespace Przychodnia
         {
             this.Close();
         }
+
+        private void btn_Lekarze_Click(object sender, EventArgs e)
+        {
+            Menu_Lekarze menu_Lekarze = new Menu_Lekarze();
+            menu_Lekarze.Show();
+        }
     }
 }
 

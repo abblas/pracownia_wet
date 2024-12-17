@@ -52,7 +52,6 @@
             label_TypWizyty = new Label();
             label_IdWizyty = new Label();
             textBox_IdWizyty = new TextBox();
-            textBox_Lekarz = new TextBox();
             label_Lekarz = new Label();
             label_DataWizyty = new Label();
             label_Pacjent = new Label();
@@ -77,13 +76,14 @@
             label_typEdytowanejWizyty = new Label();
             label_idEdytowanejWizyty = new Label();
             textBox_idEdytowanejWizyty = new TextBox();
-            textBox_lekarzEdytowanejWizyty = new TextBox();
             label_lekarzEdytowanejWizyty = new Label();
             label_dataEdytowanejWizyty = new Label();
             label_pacjentEdytowanejWizyty = new Label();
             label_wlascicielEdytowanejWizyty = new Label();
             btn_usuwanieWizyty = new Button();
             label_usuwanieWizyty = new Label();
+            comboBox_lekarzEdytowanejWizyty = new ComboBox();
+            comboBox_lekarz = new ComboBox();
             panel_Wizyty.SuspendLayout();
             panel_NowaWizyta.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pacjentBindingSource).BeginInit();
@@ -160,6 +160,7 @@
             // 
             // panel_NowaWizyta
             // 
+            panel_NowaWizyta.Controls.Add(comboBox_lekarz);
             panel_NowaWizyta.Controls.Add(comboBox_wlasciciel);
             panel_NowaWizyta.Controls.Add(comboBox_Pacjent);
             panel_NowaWizyta.Controls.Add(dateTimePicker_godzinaWizyty);
@@ -171,14 +172,13 @@
             panel_NowaWizyta.Controls.Add(label_TypWizyty);
             panel_NowaWizyta.Controls.Add(label_IdWizyty);
             panel_NowaWizyta.Controls.Add(textBox_IdWizyty);
-            panel_NowaWizyta.Controls.Add(textBox_Lekarz);
             panel_NowaWizyta.Controls.Add(label_Lekarz);
             panel_NowaWizyta.Controls.Add(label_DataWizyty);
             panel_NowaWizyta.Controls.Add(label_Pacjent);
             panel_NowaWizyta.Controls.Add(label_Wlasciciel);
             panel_NowaWizyta.Location = new Point(327, 12);
             panel_NowaWizyta.Name = "panel_NowaWizyta";
-            panel_NowaWizyta.Size = new Size(1289, 247);
+            panel_NowaWizyta.Size = new Size(1465, 247);
             panel_NowaWizyta.TabIndex = 25;
             panel_NowaWizyta.Visible = false;
             // 
@@ -225,7 +225,7 @@
             // btn_ZapiszWizyte
             // 
             btn_ZapiszWizyte.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            btn_ZapiszWizyte.Location = new Point(1149, 198);
+            btn_ZapiszWizyte.Location = new Point(1332, 195);
             btn_ZapiszWizyte.Name = "btn_ZapiszWizyte";
             btn_ZapiszWizyte.Size = new Size(130, 46);
             btn_ZapiszWizyte.TabIndex = 12;
@@ -298,15 +298,6 @@
             textBox_IdWizyty.ReadOnly = true;
             textBox_IdWizyty.Size = new Size(95, 38);
             textBox_IdWizyty.TabIndex = 5;
-            // 
-            // textBox_Lekarz
-            // 
-            textBox_Lekarz.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            textBox_Lekarz.Location = new Point(1060, 89);
-            textBox_Lekarz.Multiline = true;
-            textBox_Lekarz.Name = "textBox_Lekarz";
-            textBox_Lekarz.Size = new Size(145, 38);
-            textBox_Lekarz.TabIndex = 11;
             // 
             // label_Lekarz
             // 
@@ -459,6 +450,7 @@
             // 
             // panel_edycjaWizyty
             // 
+            panel_edycjaWizyty.Controls.Add(comboBox_lekarzEdytowanejWizyty);
             panel_edycjaWizyty.Controls.Add(comboBox_wlascicielEdytowanejWizyty);
             panel_edycjaWizyty.Controls.Add(comboBox_pacjentEdytowanejWizyty);
             panel_edycjaWizyty.Controls.Add(dateTimePicker_godzinaEdytowanejWizyty);
@@ -470,14 +462,13 @@
             panel_edycjaWizyty.Controls.Add(label_typEdytowanejWizyty);
             panel_edycjaWizyty.Controls.Add(label_idEdytowanejWizyty);
             panel_edycjaWizyty.Controls.Add(textBox_idEdytowanejWizyty);
-            panel_edycjaWizyty.Controls.Add(textBox_lekarzEdytowanejWizyty);
             panel_edycjaWizyty.Controls.Add(label_lekarzEdytowanejWizyty);
             panel_edycjaWizyty.Controls.Add(label_dataEdytowanejWizyty);
             panel_edycjaWizyty.Controls.Add(label_pacjentEdytowanejWizyty);
             panel_edycjaWizyty.Controls.Add(label_wlascicielEdytowanejWizyty);
             panel_edycjaWizyty.Location = new Point(327, 9);
             panel_edycjaWizyty.Name = "panel_edycjaWizyty";
-            panel_edycjaWizyty.Size = new Size(1289, 247);
+            panel_edycjaWizyty.Size = new Size(1468, 247);
             panel_edycjaWizyty.TabIndex = 26;
             panel_edycjaWizyty.Visible = false;
             // 
@@ -523,7 +514,7 @@
             // btn_zapiszEdytowanaWizyte
             // 
             btn_zapiszEdytowanaWizyte.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            btn_zapiszEdytowanaWizyte.Location = new Point(1149, 198);
+            btn_zapiszEdytowanaWizyte.Location = new Point(1335, 198);
             btn_zapiszEdytowanaWizyte.Name = "btn_zapiszEdytowanaWizyte";
             btn_zapiszEdytowanaWizyte.Size = new Size(130, 46);
             btn_zapiszEdytowanaWizyte.TabIndex = 12;
@@ -597,15 +588,6 @@
             textBox_idEdytowanejWizyty.Size = new Size(95, 38);
             textBox_idEdytowanejWizyty.TabIndex = 5;
             // 
-            // textBox_lekarzEdytowanejWizyty
-            // 
-            textBox_lekarzEdytowanejWizyty.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            textBox_lekarzEdytowanejWizyty.Location = new Point(1079, 89);
-            textBox_lekarzEdytowanejWizyty.Multiline = true;
-            textBox_lekarzEdytowanejWizyty.Name = "textBox_lekarzEdytowanejWizyty";
-            textBox_lekarzEdytowanejWizyty.Size = new Size(145, 38);
-            textBox_lekarzEdytowanejWizyty.TabIndex = 11;
-            // 
             // label_lekarzEdytowanejWizyty
             // 
             label_lekarzEdytowanejWizyty.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
@@ -665,22 +647,42 @@
             label_usuwanieWizyty.Text = "Wybierz wizytę do usunięcia";
             label_usuwanieWizyty.Visible = false;
             // 
+            // comboBox_lekarzEdytowanejWizyty
+            // 
+            comboBox_lekarzEdytowanejWizyty.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 238);
+            comboBox_lekarzEdytowanejWizyty.FormattingEnabled = true;
+            comboBox_lekarzEdytowanejWizyty.Location = new Point(1079, 89);
+            comboBox_lekarzEdytowanejWizyty.Name = "comboBox_lekarzEdytowanejWizyty";
+            comboBox_lekarzEdytowanejWizyty.Size = new Size(238, 38);
+            comboBox_lekarzEdytowanejWizyty.Sorted = true;
+            comboBox_lekarzEdytowanejWizyty.TabIndex = 26;
+            // 
+            // comboBox_lekarz
+            // 
+            comboBox_lekarz.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 238);
+            comboBox_lekarz.FormattingEnabled = true;
+            comboBox_lekarz.Location = new Point(1060, 89);
+            comboBox_lekarz.Name = "comboBox_lekarz";
+            comboBox_lekarz.Size = new Size(238, 38);
+            comboBox_lekarz.Sorted = true;
+            comboBox_lekarz.TabIndex = 25;
+            // 
             // Menu_Wizyty
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(2258, 1011);
-            Controls.Add(label_usuwanieWizyty);
             Controls.Add(btn_usuwanieWizyty);
             Controls.Add(btn_edycjaWizyty);
             Controls.Add(btn_wrocDoMenuGlownego);
             Controls.Add(dataGridView_listaWizyt);
-            Controls.Add(label_ListaWizyt);
             Controls.Add(label_VetAnimal);
             Controls.Add(btn_cofnijDoMenuWizyt);
+            Controls.Add(panel_NowaWizyta);
+            Controls.Add(label_usuwanieWizyty);
+            Controls.Add(label_ListaWizyt);
             Controls.Add(panel_edycjaWizyty);
             Controls.Add(panel_Wizyty);
-            Controls.Add(panel_NowaWizyta);
             Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 238);
             Name = "Menu_Wizyty";
             Text = "Wizyty";
@@ -713,7 +715,6 @@
         private Label label_TypWizyty;
         private Label label_IdWizyty;
         private TextBox textBox_IdWizyty;
-        private TextBox textBox_Lekarz;
         private Label label_Lekarz;
         private Label label_DataWizyty;
         private Label label_Pacjent;
@@ -736,7 +737,6 @@
         private Label label_typEdytowanejWizyty;
         private Label label_idEdytowanejWizyty;
         private TextBox textBox_idEdytowanejWizyty;
-        private TextBox textBox_lekarzEdytowanejWizyty;
         private Label label_lekarzEdytowanejWizyty;
         private Label label_dataEdytowanejWizyty;
         private Label label_pacjentEdytowanejWizyty;
@@ -748,5 +748,7 @@
         private Label label_usuwanieWizyty;
         private ComboBox comboBox_wlasciciel;
         private ComboBox comboBox_wlascicielEdytowanejWizyty;
+        private ComboBox comboBox_lekarzEdytowanejWizyty;
+        private ComboBox comboBox_lekarz;
     }
 }

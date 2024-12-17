@@ -18,26 +18,30 @@ namespace Przychodnia
         public DateTime dataUrodzenia;
         public string waga;
 		public Klient wlasciciel;
-
+        //Tworzenie konstruktora z jednym argumentem
 		public Pacjent(string imie)
 		{
 			this.imie = imie;
 		}
-        //Nadpisywanie metody ToString() w klasie Pacjent, aby zwracała imię pacjenta
+        //Nadpisywanie metody ToString(), aby zwracała imię pacjenta
         public override string ToString()
         {
             return imie;
         }
-
+        //Tworzenie konstruktora z kilkoma argumentami
         public Pacjent(string id, string imie, string gatunek, string rasa, string plec, DateTime dataUrodzenia, string waga, Klient wlasciciel)
         {
+            //Sprawdzanie czy zmienna id jest pusta
             if (string.IsNullOrEmpty(id))
             {
+                //Jeśli tak to zwiększamy zmienną licznik o 1
                 licznik++;
+                //I przypisujemy wartość z licznika do zmiennej id w tym konstruktorze
                 this.id = licznik.ToString();
             }
             else
-            {
+            {      
+                //W przeciwnym razie wartość ze zmiennej globalnej id przypisujemy do wartości zmiennej id konstruktora
                 this.id = id;
             }
             this.imie = imie;
@@ -47,14 +51,15 @@ namespace Przychodnia
             this.dataUrodzenia = dataUrodzenia;
             this.waga = waga;
             this.wlasciciel = wlasciciel;
-            // this.wiek = wiek;
         }
+        //Tworzenie konstruktora z trzema argumentami
         public Pacjent(string id, string imie, Klient wlasciciel)
         {
             this.id = id;
             this.imie = imie;
             this.wlasciciel = wlasciciel;
         }
+        //Tworzenie metody do generowania nowego numeru ID pacjenta po dodaniu nowego pacjenta do bazy
         public static string GenerujNoweId()
         {
             licznik++;

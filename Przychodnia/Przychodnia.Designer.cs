@@ -104,6 +104,7 @@
             btn_Lekarze.TabIndex = 4;
             btn_Lekarze.Text = "Lekarze";
             btn_Lekarze.UseVisualStyleBackColor = false;
+            btn_Lekarze.Click += btn_Lekarze_Click;
             // 
             // btn_zakonczProgram
             // 
