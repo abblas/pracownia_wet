@@ -9,7 +9,7 @@ namespace Przychodnia
 {
     public class Osoba
     {
-        protected string id;
+        public string id;
         public string imie;
         public string nazwisko;
         public string plec;

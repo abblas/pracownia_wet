@@ -41,6 +41,7 @@
             btn_EdytujWizyte = new Button();
             btn_DodajWizyte = new Button();
             panel_NowaWizyta = new Panel();
+            comboBox_lekarz = new ComboBox();
             comboBox_wlasciciel = new ComboBox();
             comboBox_Pacjent = new ComboBox();
             dateTimePicker_godzinaWizyty = new DateTimePicker();
@@ -65,6 +66,7 @@
             btn_wrocDoMenuGlownego = new Button();
             btn_edycjaWizyty = new Button();
             panel_edycjaWizyty = new Panel();
+            comboBox_lekarzEdytowanejWizyty = new ComboBox();
             comboBox_wlascicielEdytowanejWizyty = new ComboBox();
             comboBox_pacjentEdytowanejWizyty = new ComboBox();
             dateTimePicker_godzinaEdytowanejWizyty = new DateTimePicker();
@@ -82,8 +84,6 @@
             label_wlascicielEdytowanejWizyty = new Label();
             btn_usuwanieWizyty = new Button();
             label_usuwanieWizyty = new Label();
-            comboBox_lekarzEdytowanejWizyty = new ComboBox();
-            comboBox_lekarz = new ComboBox();
             panel_Wizyty.SuspendLayout();
             panel_NowaWizyta.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pacjentBindingSource).BeginInit();
@@ -98,7 +98,7 @@
             label_VetAnimal.Font = new Font("Sitka Banner", 48F, FontStyle.Bold, GraphicsUnit.Point, 238);
             label_VetAnimal.Location = new Point(0, 0);
             label_VetAnimal.Name = "label_VetAnimal";
-            label_VetAnimal.Size = new Size(321, 1011);
+            label_VetAnimal.Size = new Size(321, 894);
             label_VetAnimal.TabIndex = 1;
             label_VetAnimal.Text = "VetAnimal";
             label_VetAnimal.TextAlign = ContentAlignment.TopCenter;
@@ -181,6 +181,16 @@
             panel_NowaWizyta.Size = new Size(1465, 247);
             panel_NowaWizyta.TabIndex = 25;
             panel_NowaWizyta.Visible = false;
+            // 
+            // comboBox_lekarz
+            // 
+            comboBox_lekarz.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 238);
+            comboBox_lekarz.FormattingEnabled = true;
+            comboBox_lekarz.Location = new Point(1060, 89);
+            comboBox_lekarz.Name = "comboBox_lekarz";
+            comboBox_lekarz.Size = new Size(238, 38);
+            comboBox_lekarz.Sorted = true;
+            comboBox_lekarz.TabIndex = 25;
             // 
             // comboBox_wlasciciel
             // 
@@ -472,6 +482,16 @@
             panel_edycjaWizyty.TabIndex = 26;
             panel_edycjaWizyty.Visible = false;
             // 
+            // comboBox_lekarzEdytowanejWizyty
+            // 
+            comboBox_lekarzEdytowanejWizyty.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 238);
+            comboBox_lekarzEdytowanejWizyty.FormattingEnabled = true;
+            comboBox_lekarzEdytowanejWizyty.Location = new Point(1079, 89);
+            comboBox_lekarzEdytowanejWizyty.Name = "comboBox_lekarzEdytowanejWizyty";
+            comboBox_lekarzEdytowanejWizyty.Size = new Size(238, 38);
+            comboBox_lekarzEdytowanejWizyty.Sorted = true;
+            comboBox_lekarzEdytowanejWizyty.TabIndex = 26;
+            // 
             // comboBox_wlascicielEdytowanejWizyty
             // 
             comboBox_wlascicielEdytowanejWizyty.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 238);
@@ -647,42 +667,22 @@
             label_usuwanieWizyty.Text = "Wybierz wizytę do usunięcia";
             label_usuwanieWizyty.Visible = false;
             // 
-            // comboBox_lekarzEdytowanejWizyty
-            // 
-            comboBox_lekarzEdytowanejWizyty.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            comboBox_lekarzEdytowanejWizyty.FormattingEnabled = true;
-            comboBox_lekarzEdytowanejWizyty.Location = new Point(1079, 89);
-            comboBox_lekarzEdytowanejWizyty.Name = "comboBox_lekarzEdytowanejWizyty";
-            comboBox_lekarzEdytowanejWizyty.Size = new Size(238, 38);
-            comboBox_lekarzEdytowanejWizyty.Sorted = true;
-            comboBox_lekarzEdytowanejWizyty.TabIndex = 26;
-            // 
-            // comboBox_lekarz
-            // 
-            comboBox_lekarz.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            comboBox_lekarz.FormattingEnabled = true;
-            comboBox_lekarz.Location = new Point(1060, 89);
-            comboBox_lekarz.Name = "comboBox_lekarz";
-            comboBox_lekarz.Size = new Size(238, 38);
-            comboBox_lekarz.Sorted = true;
-            comboBox_lekarz.TabIndex = 25;
-            // 
             // Menu_Wizyty
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(2258, 1011);
+            ClientSize = new Size(1808, 894);
             Controls.Add(btn_usuwanieWizyty);
             Controls.Add(btn_edycjaWizyty);
             Controls.Add(btn_wrocDoMenuGlownego);
             Controls.Add(dataGridView_listaWizyt);
             Controls.Add(label_VetAnimal);
             Controls.Add(btn_cofnijDoMenuWizyt);
-            Controls.Add(panel_NowaWizyta);
             Controls.Add(label_usuwanieWizyty);
             Controls.Add(label_ListaWizyt);
-            Controls.Add(panel_edycjaWizyty);
             Controls.Add(panel_Wizyty);
+            Controls.Add(panel_NowaWizyta);
+            Controls.Add(panel_edycjaWizyty);
             Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 238);
             Name = "Menu_Wizyty";
             Text = "Wizyty";

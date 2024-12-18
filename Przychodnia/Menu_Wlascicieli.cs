@@ -21,15 +21,6 @@ namespace Przychodnia
         public List<Klient> klienci = new List<Klient>();
         private void Menu_Wlascicieli_Load(object sender, EventArgs e)
         {
-            var drugiekran = Screen.AllScreens.FirstOrDefault(s => !s.Primary);
-
-            if (drugiekran != null)
-            {
-                // Ustaw pozycję na drugim monitorze
-                this.StartPosition = FormStartPosition.Manual;
-                this.Location = drugiekran.WorkingArea.Location; // Początek obszaru roboczego monitora
-                this.Size = drugiekran.WorkingArea.Size;
-            }
             OdczytajWlascicieliZPliku(@"C:\Users\Luke\Desktop\klienci.txt");
             dataGridView_listaWlascicieli.SelectionChanged += new EventHandler(dataGridView_listaWlascicieli_SelectionChanged);
         }

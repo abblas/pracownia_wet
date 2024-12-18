@@ -22,15 +22,6 @@ namespace Przychodnia
         public List<Pacjent> pacjenci = new List<Pacjent>();
         private void Menu_Pacjenci_Load(object sender, EventArgs e)
         {
-            var drugiekran = Screen.AllScreens.FirstOrDefault(s => !s.Primary);
-
-            if (drugiekran != null)
-            {
-                // Ustaw pozycję na drugim monitorze
-                this.StartPosition = FormStartPosition.Manual;
-                this.Location = drugiekran.WorkingArea.Location; // Początek obszaru roboczego monitora
-                this.Size = drugiekran.WorkingArea.Size;
-            }
             dateTimePicker_DataUrodzeniaPacjenta.Format = DateTimePickerFormat.Custom;
             dateTimePicker_DataUrodzeniaPacjenta.CustomFormat = " "; // Puste pole na starcie
             OdczytajPacjentowZPliku(@"C:\Users\Luke\Desktop\pacjenci.txt");

@@ -34,18 +34,7 @@ namespace Przychodnia
         }
         private void Przychodnia_Load(object sender, EventArgs e)
         {
-            {
-                // Wybierz drugi monitor (jeœli istnieje)
-                var drugiekran = Screen.AllScreens.FirstOrDefault(s => !s.Primary);
 
-                if (drugiekran != null)
-                {
-                    // Ustaw pozycjê na drugim monitorze
-                    this.StartPosition = FormStartPosition.Manual;
-                    this.Location = drugiekran.WorkingArea.Location; // Pocz¹tek obszaru roboczego monitora
-                    this.Size = drugiekran.WorkingArea.Size;
-                }
-            }
         }
         private void btn_zakonczProgram_Click(object sender, EventArgs e)
         {

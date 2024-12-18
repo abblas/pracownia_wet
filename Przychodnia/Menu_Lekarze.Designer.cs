@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             label_VetAnimal = new Label();
             btn_menuGlowne = new Button();
             panel_Lekarze = new Panel();
@@ -94,7 +94,7 @@
             label_VetAnimal.Font = new Font("Sitka Banner", 48F, FontStyle.Bold, GraphicsUnit.Point, 238);
             label_VetAnimal.Location = new Point(0, 0);
             label_VetAnimal.Name = "label_VetAnimal";
-            label_VetAnimal.Size = new Size(321, 1018);
+            label_VetAnimal.Size = new Size(321, 885);
             label_VetAnimal.TabIndex = 3;
             label_VetAnimal.Text = "VetAnimal";
             label_VetAnimal.TextAlign = ContentAlignment.TopCenter;
@@ -540,42 +540,42 @@
             dataGridView_listaLekarzy.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView_listaLekarzy.BackgroundColor = SystemColors.ButtonHighlight;
             dataGridView_listaLekarzy.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = SystemColors.Control;
-            dataGridViewCellStyle5.Font = new Font("Arial Narrow", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            dataGridViewCellStyle5.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Control;
-            dataGridViewCellStyle5.SelectionForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.False;
-            dataGridView_listaLekarzy.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dataGridViewCellStyle1.Font = new Font("Arial Narrow", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 238);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Control;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
+            dataGridView_listaLekarzy.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridView_listaLekarzy.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView_listaLekarzy.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2 });
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = SystemColors.Window;
-            dataGridViewCellStyle6.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            dataGridViewCellStyle6.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
-            dataGridView_listaLekarzy.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 238);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dataGridView_listaLekarzy.DefaultCellStyle = dataGridViewCellStyle2;
             dataGridView_listaLekarzy.Location = new Point(327, 514);
             dataGridView_listaLekarzy.MultiSelect = false;
             dataGridView_listaLekarzy.Name = "dataGridView_listaLekarzy";
             dataGridView_listaLekarzy.ReadOnly = true;
-            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = SystemColors.Control;
-            dataGridViewCellStyle7.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            dataGridViewCellStyle7.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = SystemColors.Control;
-            dataGridViewCellStyle7.SelectionForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
-            dataGridView_listaLekarzy.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = SystemColors.Control;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 238);
+            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Control;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dataGridView_listaLekarzy.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dataGridView_listaLekarzy.RowHeadersWidth = 20;
-            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridView_listaLekarzy.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView_listaLekarzy.RowsDefaultCellStyle = dataGridViewCellStyle4;
             dataGridView_listaLekarzy.RowTemplate.Height = 50;
             dataGridView_listaLekarzy.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView_listaLekarzy.Size = new Size(1546, 429);
+            dataGridView_listaLekarzy.Size = new Size(1546, 307);
             dataGridView_listaLekarzy.StandardTab = true;
             dataGridView_listaLekarzy.TabIndex = 32;
             dataGridView_listaLekarzy.Visible = false;
@@ -606,7 +606,7 @@
             // 
             btn_edytowanieLekarza.Enabled = false;
             btn_edytowanieLekarza.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            btn_edytowanieLekarza.Location = new Point(914, 949);
+            btn_edytowanieLekarza.Location = new Point(914, 827);
             btn_edytowanieLekarza.Name = "btn_edytowanieLekarza";
             btn_edytowanieLekarza.Size = new Size(386, 46);
             btn_edytowanieLekarza.TabIndex = 43;
@@ -619,7 +619,7 @@
             // 
             btn_usuwanieLekarza.Enabled = false;
             btn_usuwanieLekarza.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            btn_usuwanieLekarza.Location = new Point(914, 949);
+            btn_usuwanieLekarza.Location = new Point(914, 827);
             btn_usuwanieLekarza.Name = "btn_usuwanieLekarza";
             btn_usuwanieLekarza.Size = new Size(386, 46);
             btn_usuwanieLekarza.TabIndex = 44;
@@ -631,7 +631,7 @@
             // btn_cofnijDoMenuLekarzy
             // 
             btn_cofnijDoMenuLekarzy.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            btn_cofnijDoMenuLekarzy.Location = new Point(1743, 949);
+            btn_cofnijDoMenuLekarzy.Location = new Point(1737, 827);
             btn_cofnijDoMenuLekarzy.Name = "btn_cofnijDoMenuLekarzy";
             btn_cofnijDoMenuLekarzy.Size = new Size(130, 46);
             btn_cofnijDoMenuLekarzy.TabIndex = 45;
@@ -654,7 +654,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(2592, 1018);
+            ClientSize = new Size(1879, 885);
             Controls.Add(label_lekarzDoEdycji);
             Controls.Add(btn_cofnijDoMenuLekarzy);
             Controls.Add(label_listaLekarzy);

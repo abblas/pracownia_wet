@@ -352,7 +352,7 @@
             // btn_cofnijDoMenuWlascicieli
             // 
             btn_cofnijDoMenuWlascicieli.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            btn_cofnijDoMenuWlascicieli.Location = new Point(1743, 956);
+            btn_cofnijDoMenuWlascicieli.Location = new Point(1744, 867);
             btn_cofnijDoMenuWlascicieli.Name = "btn_cofnijDoMenuWlascicieli";
             btn_cofnijDoMenuWlascicieli.Size = new Size(130, 46);
             btn_cofnijDoMenuWlascicieli.TabIndex = 39;
@@ -402,7 +402,7 @@
             dataGridView_listaWlascicieli.RowsDefaultCellStyle = dataGridViewCellStyle4;
             dataGridView_listaWlascicieli.RowTemplate.Height = 50;
             dataGridView_listaWlascicieli.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView_listaWlascicieli.Size = new Size(1546, 429);
+            dataGridView_listaWlascicieli.Size = new Size(1546, 340);
             dataGridView_listaWlascicieli.StandardTab = true;
             dataGridView_listaWlascicieli.TabIndex = 40;
             dataGridView_listaWlascicieli.Visible = false;
@@ -614,7 +614,7 @@
             // 
             btn_edycjaWlasciciela.Enabled = false;
             btn_edycjaWlasciciela.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            btn_edycjaWlasciciela.Location = new Point(941, 956);
+            btn_edycjaWlasciciela.Location = new Point(941, 867);
             btn_edycjaWlasciciela.Name = "btn_edycjaWlasciciela";
             btn_edycjaWlasciciela.Size = new Size(386, 46);
             btn_edycjaWlasciciela.TabIndex = 42;
@@ -627,7 +627,7 @@
             // 
             btn_usuwanieWlasciciela.Enabled = false;
             btn_usuwanieWlasciciela.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            btn_usuwanieWlasciciela.Location = new Point(941, 956);
+            btn_usuwanieWlasciciela.Location = new Point(941, 867);
             btn_usuwanieWlasciciela.Name = "btn_usuwanieWlasciciela";
             btn_usuwanieWlasciciela.Size = new Size(386, 46);
             btn_usuwanieWlasciciela.TabIndex = 43;
@@ -650,7 +650,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(2092, 1019);
+            ClientSize = new Size(1886, 1019);
             Controls.Add(label_wlascicielDoEdycji);
             Controls.Add(btn_usuwanieWlasciciela);
             Controls.Add(btn_edycjaWlasciciela);

@@ -20,15 +20,6 @@ namespace Przychodnia
         public List<Lekarz> lekarze = new List<Lekarz>();
         private void Menu_Lekarze_Load(object sender, EventArgs e)
         {
-            var drugiekran = Screen.AllScreens.FirstOrDefault(s => !s.Primary);
-
-            if (drugiekran != null)
-            {
-                // Ustaw pozycję na drugim monitorze
-                this.StartPosition = FormStartPosition.Manual;
-                this.Location = drugiekran.WorkingArea.Location; // Początek obszaru roboczego monitora
-                this.Size = drugiekran.WorkingArea.Size;
-            }
             OdczytajLekarzyZPliku(@"C:\Users\Luke\Desktop\lekarze.txt");
             dataGridView_listaLekarzy.SelectionChanged += new EventHandler(dataGridView_listaLekarzy_SelectionChanged);
         }

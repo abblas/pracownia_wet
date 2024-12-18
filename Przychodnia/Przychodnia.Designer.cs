@@ -44,7 +44,7 @@
             label_VetAnimal.Font = new Font("Sitka Banner", 48F, FontStyle.Bold, GraphicsUnit.Point, 238);
             label_VetAnimal.Location = new Point(0, 0);
             label_VetAnimal.Name = "label_VetAnimal";
-            label_VetAnimal.Size = new Size(321, 1003);
+            label_VetAnimal.Size = new Size(321, 851);
             label_VetAnimal.TabIndex = 0;
             label_VetAnimal.Text = "VetAnimal";
             label_VetAnimal.TextAlign = ContentAlignment.TopCenter;
@@ -112,7 +112,7 @@
             btn_zakonczProgram.Font = new Font("DejaVu Sans Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btn_zakonczProgram.ForeColor = SystemColors.ButtonFace;
             btn_zakonczProgram.ImageAlign = ContentAlignment.TopCenter;
-            btn_zakonczProgram.Location = new Point(95, 946);
+            btn_zakonczProgram.Location = new Point(95, 793);
             btn_zakonczProgram.Name = "btn_zakonczProgram";
             btn_zakonczProgram.Size = new Size(129, 34);
             btn_zakonczProgram.TabIndex = 6;
@@ -139,7 +139,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Menu;
-            ClientSize = new Size(2409, 1003);
+            ClientSize = new Size(1582, 851);
             Controls.Add(btn_wrocDoMenuGlownego);
             Controls.Add(btn_zakonczProgram);
             Controls.Add(btn_Lekarze);

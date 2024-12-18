@@ -18,3 +18,4 @@ C:\Users\Luke\source\repos\Przychodnia\obj\Debug\net8.0-windows\Przychodnia.Menu
 C:\Users\Luke\source\repos\Przychodnia\obj\Debug\net8.0-windows\Przychodnia.Menu_Pacjenci.resources
 C:\Users\Luke\source\repos\Przychodnia\obj\Debug\net8.0-windows\Przychodnia.Menu_Wlascicieli.resources
 C:\Users\Luke\source\repos\Przychodnia\obj\Debug\net8.0-windows\Przychodnia.Menu_Lekarze.resources
+C:\Users\Luke\source\repos\Przychodnia\obj\Debug\net8.0-windows\Przychodnia.Logowanie.resources

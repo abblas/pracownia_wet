@@ -372,7 +372,7 @@ namespace Przychodnia
             // btn_cofnijDoMenuPacjentow
             // 
             btn_cofnijDoMenuPacjentow.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            btn_cofnijDoMenuPacjentow.Location = new Point(1743, 956);
+            btn_cofnijDoMenuPacjentow.Location = new Point(1743, 872);
             btn_cofnijDoMenuPacjentow.Name = "btn_cofnijDoMenuPacjentow";
             btn_cofnijDoMenuPacjentow.Size = new Size(130, 46);
             btn_cofnijDoMenuPacjentow.TabIndex = 9;
@@ -422,7 +422,7 @@ namespace Przychodnia
             dataGridView_listaPacjentow.RowsDefaultCellStyle = dataGridViewCellStyle4;
             dataGridView_listaPacjentow.RowTemplate.Height = 50;
             dataGridView_listaPacjentow.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView_listaPacjentow.Size = new Size(1546, 429);
+            dataGridView_listaPacjentow.Size = new Size(1546, 345);
             dataGridView_listaPacjentow.StandardTab = true;
             dataGridView_listaPacjentow.TabIndex = 31;
             dataGridView_listaPacjentow.Visible = false;
@@ -662,7 +662,7 @@ namespace Przychodnia
             // 
             btn_edycjaPacjenta.Enabled = false;
             btn_edycjaPacjenta.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            btn_edycjaPacjenta.Location = new Point(925, 953);
+            btn_edycjaPacjenta.Location = new Point(925, 872);
             btn_edycjaPacjenta.Name = "btn_edycjaPacjenta";
             btn_edycjaPacjenta.Size = new Size(386, 46);
             btn_edycjaPacjenta.TabIndex = 34;
@@ -699,7 +699,7 @@ namespace Przychodnia
             // 
             btn_usuwaniePacjenta.Enabled = false;
             btn_usuwaniePacjenta.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            btn_usuwaniePacjenta.Location = new Point(925, 953);
+            btn_usuwaniePacjenta.Location = new Point(925, 872);
             btn_usuwaniePacjenta.Name = "btn_usuwaniePacjenta";
             btn_usuwaniePacjenta.Size = new Size(386, 46);
             btn_usuwaniePacjenta.TabIndex = 37;

@@ -20,17 +20,10 @@ namespace Przychodnia
         }
         private List<Wizyta> wizyty = new List<Wizyta>();
         private List<Pacjent> pacjenci = new List<Pacjent>();
+        List<Uzytkownik> uzytkownicy = new List<Uzytkownik>();
+        Uzytkownik zalogowanyUzytkownik = null;
         private void Menu_Wizyty_Load(object sender, EventArgs e)
         {
-            var drugiekran = Screen.AllScreens.FirstOrDefault(s => !s.Primary);
-
-            if (drugiekran != null)
-            {
-                // Ustaw pozycję na drugim monitorze
-                this.StartPosition = FormStartPosition.Manual;
-                this.Location = drugiekran.WorkingArea.Location; // Początek obszaru roboczego monitora
-                this.Size = drugiekran.WorkingArea.Size;
-            }
             dateTimePicker_dataWizyty.Format = DateTimePickerFormat.Custom;
             dateTimePicker_dataWizyty.MinDate = DateTime.Today;
             dateTimePicker_dataWizyty.CustomFormat = " "; // Puste pole na starcie
