@@ -1,0 +1,4 @@
+IdWizyty-TypWizyty-DataWizyty-GodzinaWizyty-Pacjent-Wlasciciel-Lekarz
+1/2024-Zabieg-18.12.2024-21:57-Diego-Łukasz Chodzicki-Paweł Olszewski
+3/2024-Badanie-24.12.2024-20:24-Diego-Łukasz Chodzicki-Paweł Olszewski
+2/2024-Szczepienie-25.12.2024-11:06-Lusia-Aleksandra Piotrowska-Barbara Stępień

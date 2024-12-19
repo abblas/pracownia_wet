@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace Przychodnia
 {
     public class Klient : Osoba
@@ -15,9 +10,7 @@ namespace Przychodnia
         {
             if (string.IsNullOrEmpty(id))
             {
-                
                 licznik++;
-
                 this.id = licznik.ToString();
             }
             else
@@ -28,13 +21,11 @@ namespace Przychodnia
             this.adres = adres;
             this.nrTelefonu = nrTelefonu;
             this.mail = mail;
-
         }
         public Klient(string imie) : base(imie)
         {
             this.imie = imie;
         }
-
         public Klient(string imie, string nazwisko) : base (imie, nazwisko)
         {
             this.imie = imie;

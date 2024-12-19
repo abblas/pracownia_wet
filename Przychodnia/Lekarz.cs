@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace Przychodnia
 {
     //Tworzenie klasy która dziedziczy po klasie Osoba
@@ -35,7 +30,6 @@ namespace Przychodnia
         //Tworzenie konstruktora z dwoma argumentami
         public Lekarz(string imie, string nazwisko) : base(imie, nazwisko)
         {
-            //Do sprawdzenia czy jest to potrzebne?
             this.imie = imie;
             this.nazwisko = nazwisko;
         }
@@ -50,6 +44,5 @@ namespace Przychodnia
             licznik++;
             return licznik.ToString();
         }
-
     }
 }

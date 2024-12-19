@@ -35,6 +35,7 @@
             btn_Lekarze = new Button();
             btn_zakonczProgram = new Button();
             btn_wrocDoMenuGlownego = new Button();
+            btn_wyloguj = new Button();
             SuspendLayout();
             // 
             // label_VetAnimal
@@ -134,12 +135,27 @@
             btn_wrocDoMenuGlownego.Text = "Menu Główne";
             btn_wrocDoMenuGlownego.UseVisualStyleBackColor = false;
             // 
+            // btn_wyloguj
+            // 
+            btn_wyloguj.BackColor = SystemColors.Highlight;
+            btn_wyloguj.Font = new Font("DejaVu Sans Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btn_wyloguj.ForeColor = SystemColors.ButtonFace;
+            btn_wyloguj.ImageAlign = ContentAlignment.TopCenter;
+            btn_wyloguj.Location = new Point(95, 733);
+            btn_wyloguj.Name = "btn_wyloguj";
+            btn_wyloguj.Size = new Size(129, 34);
+            btn_wyloguj.TabIndex = 5;
+            btn_wyloguj.Text = "Wyloguj";
+            btn_wyloguj.UseVisualStyleBackColor = false;
+            btn_wyloguj.Click += btn_wyloguj_Click;
+            // 
             // Przychodnia
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Menu;
             ClientSize = new Size(1582, 851);
+            Controls.Add(btn_wyloguj);
             Controls.Add(btn_wrocDoMenuGlownego);
             Controls.Add(btn_zakonczProgram);
             Controls.Add(btn_Lekarze);
@@ -162,5 +178,6 @@
         private Button btn_Lekarze;
         private Button btn_zakonczProgram;
         private Button btn_wrocDoMenuGlownego;
+        private Button btn_wyloguj;
     }
 }

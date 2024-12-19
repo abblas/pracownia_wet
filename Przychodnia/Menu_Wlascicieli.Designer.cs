@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
             label_VetAnimal = new Label();
-            btn_menuGlowne = new Button();
+            btn_wrocDoMenuGlownego = new Button();
             panel_Wlasciciele = new Panel();
             btn_ListaWlascicieli = new Button();
             btn_UsunWłaściciela = new Button();
@@ -81,6 +81,7 @@
             btn_edycjaWlasciciela = new Button();
             btn_usuwanieWlasciciela = new Button();
             label_wlascicielDoEdycji = new Label();
+            label_usuwanieWlasciciela = new Label();
             panel_Wlasciciele.SuspendLayout();
             panel_NowyWlasciciel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView_listaWlascicieli).BeginInit();
@@ -99,19 +100,19 @@
             label_VetAnimal.Text = "VetAnimal";
             label_VetAnimal.TextAlign = ContentAlignment.TopCenter;
             // 
-            // btn_menuGlowne
+            // btn_wrocDoMenuGlownego
             // 
-            btn_menuGlowne.BackColor = SystemColors.Highlight;
-            btn_menuGlowne.Font = new Font("DejaVu Sans Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btn_menuGlowne.ForeColor = SystemColors.ButtonFace;
-            btn_menuGlowne.ImageAlign = ContentAlignment.TopCenter;
-            btn_menuGlowne.Location = new Point(95, 100);
-            btn_menuGlowne.Name = "btn_menuGlowne";
-            btn_menuGlowne.Size = new Size(129, 34);
-            btn_menuGlowne.TabIndex = 36;
-            btn_menuGlowne.Text = "Menu Główne";
-            btn_menuGlowne.UseVisualStyleBackColor = false;
-            btn_menuGlowne.Click += btn_menuGlowne_Click;
+            btn_wrocDoMenuGlownego.BackColor = SystemColors.Highlight;
+            btn_wrocDoMenuGlownego.Font = new Font("DejaVu Sans Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btn_wrocDoMenuGlownego.ForeColor = SystemColors.ButtonFace;
+            btn_wrocDoMenuGlownego.ImageAlign = ContentAlignment.TopCenter;
+            btn_wrocDoMenuGlownego.Location = new Point(95, 100);
+            btn_wrocDoMenuGlownego.Name = "btn_wrocDoMenuGlownego";
+            btn_wrocDoMenuGlownego.Size = new Size(129, 34);
+            btn_wrocDoMenuGlownego.TabIndex = 36;
+            btn_wrocDoMenuGlownego.Text = "Menu Główne";
+            btn_wrocDoMenuGlownego.UseVisualStyleBackColor = false;
+            btn_wrocDoMenuGlownego.Click += btn_wrocDoMenuGlownego_Click;
             // 
             // panel_Wlasciciele
             // 
@@ -198,7 +199,7 @@
             textBox_nrTelefonuWlasciciela.Location = new Point(140, 311);
             textBox_nrTelefonuWlasciciela.Multiline = true;
             textBox_nrTelefonuWlasciciela.Name = "textBox_nrTelefonuWlasciciela";
-            textBox_nrTelefonuWlasciciela.Size = new Size(152, 38);
+            textBox_nrTelefonuWlasciciela.Size = new Size(302, 38);
             textBox_nrTelefonuWlasciciela.TabIndex = 6;
             // 
             // textBox_adresWlasciciela
@@ -207,7 +208,7 @@
             textBox_adresWlasciciela.Location = new Point(140, 260);
             textBox_adresWlasciciela.Multiline = true;
             textBox_adresWlasciciela.Name = "textBox_adresWlasciciela";
-            textBox_adresWlasciciela.Size = new Size(152, 38);
+            textBox_adresWlasciciela.Size = new Size(302, 38);
             textBox_adresWlasciciela.TabIndex = 5;
             // 
             // textBox_nazwiskoWlasciciela
@@ -216,7 +217,7 @@
             textBox_nazwiskoWlasciciela.Location = new Point(140, 160);
             textBox_nazwiskoWlasciciela.Multiline = true;
             textBox_nazwiskoWlasciciela.Name = "textBox_nazwiskoWlasciciela";
-            textBox_nazwiskoWlasciciela.Size = new Size(152, 38);
+            textBox_nazwiskoWlasciciela.Size = new Size(302, 38);
             textBox_nazwiskoWlasciciela.TabIndex = 3;
             // 
             // comboBox_plecWlasciciela
@@ -227,7 +228,7 @@
             comboBox_plecWlasciciela.Items.AddRange(new object[] { "Kobieta", "Mężczyzna" });
             comboBox_plecWlasciciela.Location = new Point(140, 210);
             comboBox_plecWlasciciela.Name = "comboBox_plecWlasciciela";
-            comboBox_plecWlasciciela.Size = new Size(152, 38);
+            comboBox_plecWlasciciela.Size = new Size(302, 38);
             comboBox_plecWlasciciela.TabIndex = 4;
             // 
             // textBox_idWlasciciela
@@ -237,7 +238,7 @@
             textBox_idWlasciciela.Multiline = true;
             textBox_idWlasciciela.Name = "textBox_idWlasciciela";
             textBox_idWlasciciela.ReadOnly = true;
-            textBox_idWlasciciela.Size = new Size(152, 38);
+            textBox_idWlasciciela.Size = new Size(302, 38);
             textBox_idWlasciciela.TabIndex = 1;
             // 
             // label_idWlasciciela
@@ -276,7 +277,7 @@
             textBox_imieWlasciciela.Location = new Point(140, 110);
             textBox_imieWlasciciela.Multiline = true;
             textBox_imieWlasciciela.Name = "textBox_imieWlasciciela";
-            textBox_imieWlasciciela.Size = new Size(152, 38);
+            textBox_imieWlasciciela.Size = new Size(302, 38);
             textBox_imieWlasciciela.TabIndex = 2;
             // 
             // btn_ZapiszWlasciciela
@@ -306,7 +307,7 @@
             textBox_emailWlasciciela.Location = new Point(140, 360);
             textBox_emailWlasciciela.Multiline = true;
             textBox_emailWlasciciela.Name = "textBox_emailWlasciciela";
-            textBox_emailWlasciciela.Size = new Size(152, 38);
+            textBox_emailWlasciciela.Size = new Size(302, 38);
             textBox_emailWlasciciela.TabIndex = 7;
             // 
             // label_emailWlasciciela
@@ -367,39 +368,39 @@
             dataGridView_listaWlascicieli.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView_listaWlascicieli.BackgroundColor = SystemColors.ButtonHighlight;
             dataGridView_listaWlascicieli.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = SystemColors.Control;
-            dataGridViewCellStyle1.Font = new Font("Arial Narrow", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Control;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
-            dataGridView_listaWlascicieli.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = SystemColors.Control;
+            dataGridViewCellStyle5.Font = new Font("Arial Narrow", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 238);
+            dataGridViewCellStyle5.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Control;
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.False;
+            dataGridView_listaWlascicieli.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             dataGridView_listaWlascicieli.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView_listaWlascicieli.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2 });
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = SystemColors.Window;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dataGridView_listaWlascicieli.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = SystemColors.Window;
+            dataGridViewCellStyle6.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 238);
+            dataGridViewCellStyle6.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
+            dataGridView_listaWlascicieli.DefaultCellStyle = dataGridViewCellStyle6;
             dataGridView_listaWlascicieli.Location = new Point(327, 521);
             dataGridView_listaWlascicieli.MultiSelect = false;
             dataGridView_listaWlascicieli.Name = "dataGridView_listaWlascicieli";
             dataGridView_listaWlascicieli.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = SystemColors.Control;
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Control;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dataGridView_listaWlascicieli.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = SystemColors.Control;
+            dataGridViewCellStyle7.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 238);
+            dataGridViewCellStyle7.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = SystemColors.Control;
+            dataGridViewCellStyle7.SelectionForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
+            dataGridView_listaWlascicieli.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
             dataGridView_listaWlascicieli.RowHeadersWidth = 20;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridView_listaWlascicieli.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView_listaWlascicieli.RowsDefaultCellStyle = dataGridViewCellStyle8;
             dataGridView_listaWlascicieli.RowTemplate.Height = 50;
             dataGridView_listaWlascicieli.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView_listaWlascicieli.Size = new Size(1546, 340);
@@ -646,21 +647,32 @@
             label_wlascicielDoEdycji.Text = "Wybierz właściciela do edycji";
             label_wlascicielDoEdycji.Visible = false;
             // 
+            // label_usuwanieWlasciciela
+            // 
+            label_usuwanieWlasciciela.Font = new Font("Calibri", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            label_usuwanieWlasciciela.Location = new Point(339, 491);
+            label_usuwanieWlasciciela.Name = "label_usuwanieWlasciciela";
+            label_usuwanieWlasciciela.Size = new Size(472, 27);
+            label_usuwanieWlasciciela.TabIndex = 45;
+            label_usuwanieWlasciciela.Text = "Wybierz właściciela do usunięcia";
+            label_usuwanieWlasciciela.Visible = false;
+            // 
             // Menu_Wlascicieli
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1886, 1019);
-            Controls.Add(label_wlascicielDoEdycji);
+            Controls.Add(label_usuwanieWlasciciela);
             Controls.Add(btn_usuwanieWlasciciela);
             Controls.Add(btn_edycjaWlasciciela);
-            Controls.Add(panel_edycjaWlasciciela);
             Controls.Add(dataGridView_listaWlascicieli);
             Controls.Add(btn_cofnijDoMenuWlascicieli);
-            Controls.Add(btn_menuGlowne);
+            Controls.Add(btn_wrocDoMenuGlownego);
             Controls.Add(label_VetAnimal);
             Controls.Add(panel_NowyWlasciciel);
             Controls.Add(panel_Wlasciciele);
+            Controls.Add(panel_edycjaWlasciciela);
+            Controls.Add(label_wlascicielDoEdycji);
             Controls.Add(label_ListaWlascicieli);
             Name = "Menu_Wlascicieli";
             Text = "Właściciele";
@@ -677,7 +689,7 @@
         #endregion
 
         private Label label_VetAnimal;
-        private Button btn_menuGlowne;
+        private Button btn_wrocDoMenuGlownego;
         private Panel panel_Wlasciciele;
         private Button btn_ListaWlascicieli;
         private Button btn_UsunWłaściciela;
@@ -725,5 +737,6 @@
         private Button btn_edycjaWlasciciela;
         private Button btn_usuwanieWlasciciela;
         private Label label_wlascicielDoEdycji;
+        private Label label_usuwanieWlasciciela;
     }
 }

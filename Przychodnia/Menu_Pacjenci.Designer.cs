@@ -30,10 +30,10 @@ namespace Przychodnia
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
             label_VetAnimal = new Label();
             panel_Pacjenci = new Panel();
             btn_ListaPacjentow = new Button();
@@ -84,7 +84,7 @@ namespace Przychodnia
             label_plecEdytowanegoPacjenta = new Label();
             label_dataUrodzeniaEdytowanegoPacjenta = new Label();
             btn_edycjaPacjenta = new Button();
-            btn_menuGlowne = new Button();
+            btn_wrocDoMenuGlownego = new Button();
             label_usuwaniePacjenta = new Label();
             btn_usuwaniePacjenta = new Button();
             label_pacjentDoEdycji = new Label();
@@ -195,7 +195,7 @@ namespace Przychodnia
             comboBox_ListaWlascicieli.Name = "comboBox_ListaWlascicieli";
             comboBox_ListaWlascicieli.Size = new Size(230, 38);
             comboBox_ListaWlascicieli.Sorted = true;
-            comboBox_ListaWlascicieli.TabIndex = 32;
+            comboBox_ListaWlascicieli.TabIndex = 8;
             // 
             // label_WlascicielPacjenta
             // 
@@ -305,7 +305,7 @@ namespace Przychodnia
             btn_ZapiszPacjenta.Location = new Point(504, 402);
             btn_ZapiszPacjenta.Name = "btn_ZapiszPacjenta";
             btn_ZapiszPacjenta.Size = new Size(130, 46);
-            btn_ZapiszPacjenta.TabIndex = 8;
+            btn_ZapiszPacjenta.TabIndex = 9;
             btn_ZapiszPacjenta.Text = "Zapisz pacjenta";
             btn_ZapiszPacjenta.UseVisualStyleBackColor = true;
             btn_ZapiszPacjenta.Click += btn_ZapiszPacjenta_Click;
@@ -387,39 +387,39 @@ namespace Przychodnia
             dataGridView_listaPacjentow.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView_listaPacjentow.BackgroundColor = SystemColors.ButtonHighlight;
             dataGridView_listaPacjentow.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = SystemColors.Control;
-            dataGridViewCellStyle1.Font = new Font("Arial Narrow", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Control;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
-            dataGridView_listaPacjentow.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = SystemColors.Control;
+            dataGridViewCellStyle5.Font = new Font("Arial Narrow", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 238);
+            dataGridViewCellStyle5.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Control;
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.False;
+            dataGridView_listaPacjentow.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             dataGridView_listaPacjentow.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView_listaPacjentow.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2 });
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = SystemColors.Window;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dataGridView_listaPacjentow.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = SystemColors.Window;
+            dataGridViewCellStyle6.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 238);
+            dataGridViewCellStyle6.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
+            dataGridView_listaPacjentow.DefaultCellStyle = dataGridViewCellStyle6;
             dataGridView_listaPacjentow.Location = new Point(327, 521);
             dataGridView_listaPacjentow.MultiSelect = false;
             dataGridView_listaPacjentow.Name = "dataGridView_listaPacjentow";
             dataGridView_listaPacjentow.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = SystemColors.Control;
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Control;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dataGridView_listaPacjentow.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = SystemColors.Control;
+            dataGridViewCellStyle7.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 238);
+            dataGridViewCellStyle7.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = SystemColors.Control;
+            dataGridViewCellStyle7.SelectionForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
+            dataGridView_listaPacjentow.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
             dataGridView_listaPacjentow.RowHeadersWidth = 20;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridView_listaPacjentow.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView_listaPacjentow.RowsDefaultCellStyle = dataGridViewCellStyle8;
             dataGridView_listaPacjentow.RowTemplate.Height = 50;
             dataGridView_listaPacjentow.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView_listaPacjentow.Size = new Size(1546, 345);
@@ -484,7 +484,7 @@ namespace Przychodnia
             comboBox_wlascicielEdytowanegoPacjenta.Name = "comboBox_wlascicielEdytowanegoPacjenta";
             comboBox_wlascicielEdytowanegoPacjenta.Size = new Size(258, 38);
             comboBox_wlascicielEdytowanegoPacjenta.Sorted = true;
-            comboBox_wlascicielEdytowanegoPacjenta.TabIndex = 32;
+            comboBox_wlascicielEdytowanegoPacjenta.TabIndex = 8;
             // 
             // label_wlascicielEdytowanegoPacjenta
             // 
@@ -594,7 +594,7 @@ namespace Przychodnia
             btn_zapiszEdytowanegoPacjenta.Location = new Point(504, 402);
             btn_zapiszEdytowanegoPacjenta.Name = "btn_zapiszEdytowanegoPacjenta";
             btn_zapiszEdytowanegoPacjenta.Size = new Size(130, 46);
-            btn_zapiszEdytowanegoPacjenta.TabIndex = 8;
+            btn_zapiszEdytowanegoPacjenta.TabIndex = 9;
             btn_zapiszEdytowanegoPacjenta.Text = "Zapisz pacjenta";
             btn_zapiszEdytowanegoPacjenta.UseVisualStyleBackColor = true;
             btn_zapiszEdytowanegoPacjenta.Click += btn_zapiszEdytowanegoPacjenta_Click;
@@ -671,19 +671,19 @@ namespace Przychodnia
             btn_edycjaPacjenta.Visible = false;
             btn_edycjaPacjenta.Click += btn_edycjaPacjenta_Click;
             // 
-            // btn_menuGlowne
+            // btn_wrocDoMenuGlownego
             // 
-            btn_menuGlowne.BackColor = SystemColors.Highlight;
-            btn_menuGlowne.Font = new Font("DejaVu Sans Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btn_menuGlowne.ForeColor = SystemColors.ButtonFace;
-            btn_menuGlowne.ImageAlign = ContentAlignment.TopCenter;
-            btn_menuGlowne.Location = new Point(95, 100);
-            btn_menuGlowne.Name = "btn_menuGlowne";
-            btn_menuGlowne.Size = new Size(129, 34);
-            btn_menuGlowne.TabIndex = 35;
-            btn_menuGlowne.Text = "Menu Główne";
-            btn_menuGlowne.UseVisualStyleBackColor = false;
-            btn_menuGlowne.Click += btn_menuGlowne_Click;
+            btn_wrocDoMenuGlownego.BackColor = SystemColors.Highlight;
+            btn_wrocDoMenuGlownego.Font = new Font("DejaVu Sans Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btn_wrocDoMenuGlownego.ForeColor = SystemColors.ButtonFace;
+            btn_wrocDoMenuGlownego.ImageAlign = ContentAlignment.TopCenter;
+            btn_wrocDoMenuGlownego.Location = new Point(95, 100);
+            btn_wrocDoMenuGlownego.Name = "btn_wrocDoMenuGlownego";
+            btn_wrocDoMenuGlownego.Size = new Size(129, 34);
+            btn_wrocDoMenuGlownego.TabIndex = 35;
+            btn_wrocDoMenuGlownego.Text = "Menu Główne";
+            btn_wrocDoMenuGlownego.UseVisualStyleBackColor = false;
+            btn_wrocDoMenuGlownego.Click += btn_wrocDoMenuGlownego_Click;
             // 
             // label_usuwaniePacjenta
             // 
@@ -726,15 +726,15 @@ namespace Przychodnia
             Controls.Add(btn_cofnijDoMenuPacjentow);
             Controls.Add(dataGridView_listaPacjentow);
             Controls.Add(label_pacjentDoEdycji);
-            Controls.Add(btn_menuGlowne);
+            Controls.Add(btn_wrocDoMenuGlownego);
             Controls.Add(label_VetAnimal);
             Controls.Add(label_usuwaniePacjenta);
             Controls.Add(label_ListaPacjentow);
-            Controls.Add(panel_NowyPacjent);
             Controls.Add(btn_usuwaniePacjenta);
             Controls.Add(btn_edycjaPacjenta);
             Controls.Add(panel_edycjaPacjenta);
             Controls.Add(panel_Pacjenci);
+            Controls.Add(panel_NowyPacjent);
             Name = "Menu_Pacjenci";
             Text = "Pacjenci";
             Load += Menu_Pacjenci_Load;
@@ -799,7 +799,7 @@ namespace Przychodnia
         private Label label_plecEdytowanegoPacjenta;
         private Label label_dataUrodzeniaEdytowanegoPacjenta;
         private Button btn_edycjaPacjenta;
-        private Button btn_menuGlowne;
+        private Button btn_wrocDoMenuGlownego;
         private Label label_usuwaniePacjenta;
         private Button btn_usuwaniePacjenta;
         private Label label_pacjentDoEdycji;

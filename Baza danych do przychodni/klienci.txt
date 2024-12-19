@@ -1,0 +1,10 @@
+Id-Imie-Nazwisko-Plec-Adres-NrTelefonu-Email
+1-Łukasz-Chodzicki-Mężczyzna-Wincentego Pola 87/14, Katowice-662120377-chodzicki@gmail.com
+2-Jan-Kowalski-Mężczyzna-Koszalińska 38/28, Katowice-678382642-kowalski.jan@gmail.com
+3-Maria-Nowak-Kobieta-Ligocka 3/4, Katowice-469853151-nowak.maria@gmail.com
+4-Piotr-Wiśniewski-Mężczyzna-Brynowska 23/1, Katowice-490683022-wisniewski.piotr@gmail.com
+5-Karolina-Wójcik-Kobieta-Siemianowicka 45/13, Siemianowice Śląskie-566349022-karolina.wojcik@gmail.com
+6-Michał-Kaczmarek-Mężczyzna-Mikołowska 86/12, Katowice-745673092-kaczmarekmichal@gmail.com
+7-Agnieszka-Wiśniewska-Kobieta-Długa 75/1, Mikołów-598608321-wisagnieszka@gmail.com
+8-Barbara-Lewandowska-Kobieta-Krótka 2/4, Katowice-789506869-lewandowska.b@gmail.com
+9-Andrzej-Kamiński-Mężczyzna-Sportowa 5/2, Chorzów-548925062-kamiandrzej@gmail.com

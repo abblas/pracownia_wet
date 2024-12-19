@@ -1,14 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
+﻿
 namespace Przychodnia
 {
     public partial class Menu_Wlascicieli : Form
@@ -17,16 +7,12 @@ namespace Przychodnia
         {
             InitializeComponent();
             ustawieniaDataGridView_listaWlascicieli();
-        }
+        } 
         public List<Klient> klienci = new List<Klient>();
         private void Menu_Wlascicieli_Load(object sender, EventArgs e)
         {
-            OdczytajWlascicieliZPliku(@"C:\Users\Luke\Desktop\klienci.txt");
+            OdczytajWlascicieliZPliku(@"E:\WSB\Baza danych do przychodni\klienci.txt");
             dataGridView_listaWlascicieli.SelectionChanged += new EventHandler(dataGridView_listaWlascicieli_SelectionChanged);
-        }
-        private void btn_menuGlowne_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
         private void btn_ListaWlascicieli_Click(object sender, EventArgs e)
         {
@@ -48,24 +34,6 @@ namespace Przychodnia
             string autoId = id.ToString();
             textBox_idWlasciciela.Text = autoId;
             textBox_idWlasciciela.ReadOnly = true;
-        }
-        private void btn_EdytujWłaściciela_Click(object sender, EventArgs e)
-        {
-            dataGridView_listaWlascicieli.Visible = true;
-            btn_cofnijDoMenuWlascicieli.Visible = true;
-            panel_Wlasciciele.Visible = false;
-            btn_edycjaWlasciciela.Visible = true;
-            label_wlascicielDoEdycji.Visible = true;
-            dataGridView_listaWlascicieli.ClearSelection();
-        }
-        private void btn_UsunWłaściciela_Click(object sender, EventArgs e)
-        {
-            dataGridView_listaWlascicieli.Visible = true;
-            btn_cofnijDoMenuWlascicieli.Visible = true;
-            panel_Wlasciciele.Visible = false;
-            label_ListaWlascicieli.Visible = true;
-            btn_usuwanieWlasciciela.Visible = true;
-            dataGridView_listaWlascicieli.ClearSelection();
         }
         private void btn_ZapiszWlasciciela_Click(object sender, EventArgs e)
         {
@@ -92,7 +60,165 @@ namespace Przychodnia
             //Zwiększenie ID wizyty
             zwiekszIdWlasciciela();
             wyswietlTabelkaWlascicieli();
-            ZapiszWlascicieliDoPliku(@"C:\Users\Luke\Desktop\klienci.txt");
+            ZapiszWlascicieliDoPliku(@"E:\WSB\Baza danych do przychodni\klienci.txt");
+        }
+        private void btn_EdytujWłaściciela_Click(object sender, EventArgs e)
+        {
+            dataGridView_listaWlascicieli.Visible = true;
+            btn_cofnijDoMenuWlascicieli.Visible = true;
+            panel_Wlasciciele.Visible = false;
+            btn_edycjaWlasciciela.Visible = true;
+            label_wlascicielDoEdycji.Visible = true;
+            dataGridView_listaWlascicieli.ClearSelection();
+        }
+        private void btn_edycjaWlasciciela_Click(object sender, EventArgs e)
+        {
+            panel_edycjaWlasciciela.Visible = true;
+            btn_cofnijDoMenuWlascicieli.Visible = true;
+            pobierzWartosciDoEdycji();
+        }
+        private void btn_zapiszEdytowanegoWlasciciela_Click(object sender, EventArgs e)
+        {
+            string id = textBox_idEdytowanegoWlasciciela.Text;
+            string imie = textBox_imieEdytowanegoWlasciciela.Text;
+            string nazwisko = textBox_nazwiskoEdytowanegoWlasciciela.Text;
+            string plec = comboBox_plecEdytowanegoWlasciciela.Text;
+            string adres = textBox_adresEdytowanegoWlasciciela.Text;
+            string nrTelefonu = textBox_nrTelefonuEdytowanegoWlasciciela.Text;
+            string mail = textBox_mailEdytowanegoWlasciciela.Text;
+            if (string.IsNullOrWhiteSpace(plec))
+            {
+                MessageBox.Show("Proszę wybrać płeć właściciela.");
+                return;
+            }
+            Klient edytowanyKlient = null;
+            foreach (Klient klient in klienci)
+            {
+                if (klient.id == id)
+                {
+                    edytowanyKlient = klient;
+                    break;
+                }
+            }
+            if (edytowanyKlient != null)
+            {
+                edytowanyKlient.imie = imie;
+                edytowanyKlient.nazwisko = nazwisko;
+                edytowanyKlient.plec = plec;
+                edytowanyKlient.adres = adres;
+                edytowanyKlient.nrTelefonu = nrTelefonu;
+                edytowanyKlient.mail = mail;
+            }
+            wyczyscPola();
+            wyswietlTabelkaWlascicieli();
+            ZapiszWlascicieliDoPliku(@"E:\WSB\Baza danych do przychodni\klienci.txt");
+        }
+        private void btn_UsunWłaściciela_Click(object sender, EventArgs e)
+        {
+            dataGridView_listaWlascicieli.Visible = true;
+            btn_cofnijDoMenuWlascicieli.Visible = true;
+            panel_Wlasciciele.Visible = false;
+            btn_usuwanieWlasciciela.Visible = true;
+            label_usuwanieWlasciciela.Visible = true;
+            dataGridView_listaWlascicieli.ClearSelection();
+        }
+        private void btn_usuwanieWlasciciela_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow wybranyKlient = dataGridView_listaWlascicieli.SelectedRows[0];
+            string idKlienta = wybranyKlient.Cells["id"].Value.ToString();
+            Klient klientDoUsuniecia = null;
+            foreach (Klient klient in klienci)
+            {
+                if (klient.id == idKlienta)
+                {
+                    klientDoUsuniecia = klient;
+                    break;
+                }
+            }
+            DialogResult usunKlienta = MessageBox.Show("Czy na pewno chcesz usunąć wybranego właściciela?", "Ostrzeżenie", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
+            if (usunKlienta != DialogResult.Yes)
+            {
+                return;
+            }
+            klienci.Remove(klientDoUsuniecia);
+            dataGridView_listaWlascicieli.ClearSelection();
+            foreach (Klient klient in klienci)
+            {
+                // Zmniejsz numer ID o 1 dla wizyt po usuniętej
+                string idText = klient.id;
+                int id = int.Parse(idText);
+                if (id > int.Parse(idKlienta))
+                {
+                    id--;
+                    klient.id = id.ToString();
+                }
+            }
+            // Odśwież widok tabeli
+            wyswietlTabelkaWlascicieli();
+            // Zapisz zmiany do pliku
+            ZapiszWlascicieliDoPliku(@"E:\WSB\Baza danych do przychodni\klienci.txt");
+        }
+        private void btn_cofnijDoMenuWlascicieli_Click(object sender, EventArgs e)
+        {
+            panel_NowyWlasciciel.Visible = false;
+            panel_Wlasciciele.Visible = true;
+            btn_cofnijDoMenuWlascicieli.Visible = false;
+            dataGridView_listaWlascicieli.Visible = false;
+            btn_edycjaWlasciciela.Visible = false;
+            panel_edycjaWlasciciela.Visible = false;
+            btn_usuwanieWlasciciela.Visible = false;
+            label_ListaWlascicieli.Visible = false;
+            label_wlascicielDoEdycji.Visible = false;
+            label_usuwanieWlasciciela.Visible = false;
+        }
+        private void btn_wrocDoMenuGlownego_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        private void ZapiszWlascicieliDoPliku(string sciezkaPliku)
+        {
+            // Przygotowanie listy danych wizyt w formacie tekstowym
+            var klienciText = new List<string>();
+            klienciText.Add("Id-Imie-Nazwisko-Plec-Adres-NrTelefonu-Email"); // Nagłówek
+
+            foreach (var klient in klienci)
+            {
+                // Tworzymy wiersz dla każdego pacjenta
+                string klientText = $"{klient.id}-{klient.imie}-{klient.nazwisko}-{klient.plec}-" +
+                                    $"{klient.adres}-{klient.nrTelefonu}-{klient.mail}";
+                klienciText.Add(klientText);
+            }
+
+            // Zapisujemy całą listę wizyt do pliku
+            File.WriteAllLines(sciezkaPliku, klienciText);
+
+        }
+        private void OdczytajWlascicieliZPliku(string sciezkaPliku)
+        {
+            // Odczytujemy wszystkie linie z pliku
+            string[] linie = File.ReadAllLines(sciezkaPliku);
+
+            // Pomijamy nagłówek
+            for (int i = 1; i < linie.Length; i++)
+            {
+                string linia = linie[i];
+                string[] dane = linia.Split('-');
+
+                if (dane.Length == 7)
+                {
+                    string id = dane[0];
+                    string imie = dane[1];
+                    string nazwisko = dane[2];
+                    string plec = dane[3];
+                    string adres = dane[4];
+                    string nrTelefonu = dane[5];
+                    string mail = dane[6];
+                    Klient klient = new Klient(id, imie, nazwisko, plec, adres, nrTelefonu, mail);
+                    klienci.Add(klient);
+                }
+            }
+            // Po załadowaniu wizyt z pliku, zaktualizuj DataGridView
+            wyswietlTabelkaWlascicieli();
         }
         private void wyczyscPola()
         {
@@ -146,6 +272,27 @@ namespace Przychodnia
                     );
             }
         }
+        private void pobierzWartosciDoEdycji()
+        {
+            if (dataGridView_listaWlascicieli.SelectedRows.Count > 0)
+            {
+                DataGridViewRow wybranyWiersz = dataGridView_listaWlascicieli.SelectedRows[0];
+                string id = wybranyWiersz.Cells[0].Value.ToString();
+                textBox_idEdytowanegoWlasciciela.Text = id;
+                string imie = wybranyWiersz.Cells[1].Value.ToString();
+                textBox_imieEdytowanegoWlasciciela.Text = imie;
+                string nazwisko = wybranyWiersz.Cells[2].Value.ToString();
+                textBox_nazwiskoEdytowanegoWlasciciela.Text = nazwisko;
+                string plec = wybranyWiersz.Cells[3].Value.ToString();
+                comboBox_plecEdytowanegoWlasciciela.Text = plec;
+                string adres = wybranyWiersz.Cells[4].Value.ToString();
+                textBox_adresEdytowanegoWlasciciela.Text = adres;
+                string nrTelefonu = wybranyWiersz.Cells[5].Value.ToString();
+                textBox_nrTelefonuEdytowanegoWlasciciela.Text = nrTelefonu;
+                string mail = wybranyWiersz.Cells[6].Value.ToString();
+                textBox_mailEdytowanegoWlasciciela.Text = mail;
+            }
+        }
         private void ustawieniaDataGridView_listaWlascicieli()
         {
             dataGridView_listaWlascicieli.Columns.Clear();
@@ -175,166 +322,6 @@ namespace Przychodnia
                 btn_edycjaWlasciciela.Enabled = false;
                 btn_usuwanieWlasciciela.Enabled = false;
             }
-        }
-        private void ZapiszWlascicieliDoPliku(string sciezkaPliku)
-        {
-            // Przygotowanie listy danych wizyt w formacie tekstowym
-            var klienciText = new List<string>();
-            klienciText.Add("Id-Imie-Nazwisko-Plec-Adres-NrTelefonu-Email"); // Nagłówek
-
-            foreach (var klient in klienci)
-            {
-                // Tworzymy wiersz dla każdego pacjenta
-                string klientText = $"{klient.id}-{klient.imie}-{klient.nazwisko}-{klient.plec}-" +
-                                    $"{klient.adres}-{klient.nrTelefonu}-{klient.mail}";
-                klienciText.Add(klientText);
-            }
-
-            // Zapisujemy całą listę wizyt do pliku
-            File.WriteAllLines(sciezkaPliku, klienciText);
-
-        }
-        private void OdczytajWlascicieliZPliku(string sciezkaPliku)
-        {
-            // Odczytujemy wszystkie linie z pliku
-            string[] linie = File.ReadAllLines(sciezkaPliku);
-
-            // Pomijamy nagłówek
-            for (int i = 1; i < linie.Length; i++)
-            {
-                string linia = linie[i];
-                string[] dane = linia.Split('-');
-
-                if (dane.Length == 7)
-                {
-                    string id = dane[0];
-                    string imie = dane[1];
-                    string nazwisko = dane[2];
-                    string plec = dane[3];
-                    string adres = dane[4];
-                    string nrTelefonu = dane[5];
-                    string mail = dane[6];
-                    Klient klient = new Klient(id, imie, nazwisko, plec, adres, nrTelefonu, mail);
-                    klienci.Add(klient);
-                }
-            }
-            // Po załadowaniu wizyt z pliku, zaktualizuj DataGridView
-            wyswietlTabelkaWlascicieli();
-        }
-        private void btn_cofnijDoMenuWlascicieli_Click(object sender, EventArgs e)
-        {
-            panel_NowyWlasciciel.Visible = false;
-            panel_Wlasciciele.Visible = true;
-            btn_cofnijDoMenuWlascicieli.Visible = false;
-            dataGridView_listaWlascicieli.Visible = false;
-            btn_edycjaWlasciciela.Visible = false;
-            panel_edycjaWlasciciela.Visible = false;
-            btn_usuwanieWlasciciela.Visible = false;
-            label_ListaWlascicieli.Visible = false;
-            label_wlascicielDoEdycji.Visible = false;  
-        }
-        private void btn_zapiszEdytowanegoWlasciciela_Click(object sender, EventArgs e)
-        {
-            string id = textBox_idEdytowanegoWlasciciela.Text;
-            string imie = textBox_imieEdytowanegoWlasciciela.Text;
-            string nazwisko = textBox_nazwiskoEdytowanegoWlasciciela.Text;
-            string plec = comboBox_plecEdytowanegoWlasciciela.Text;
-            string adres = textBox_adresEdytowanegoWlasciciela.Text;
-            string nrTelefonu = textBox_nrTelefonuEdytowanegoWlasciciela.Text;
-            string mail = textBox_mailEdytowanegoWlasciciela.Text;
-            if (string.IsNullOrWhiteSpace(plec))
-            {
-                MessageBox.Show("Proszę wybrać płeć właściciela.");
-                return;
-            }
-            Klient edytowanyKlient = null;
-            foreach (Klient klient in klienci)
-            {
-                if (klient.id == id)
-                {
-                    edytowanyKlient = klient;
-                    break;
-                }
-            }
-            if (edytowanyKlient != null)
-            {
-                edytowanyKlient.imie = imie;
-                edytowanyKlient.nazwisko = nazwisko;
-                edytowanyKlient.plec = plec;
-                edytowanyKlient.adres = adres;
-                edytowanyKlient.nrTelefonu = nrTelefonu;
-                edytowanyKlient.mail = mail;
-            }
-            wyczyscPola();
-            wyswietlTabelkaWlascicieli();
-            ZapiszWlascicieliDoPliku(@"C:\Users\Luke\Desktop\klienci.txt");
-        }
-        private void btn_edycjaWlasciciela_Click(object sender, EventArgs e)
-        {
-            panel_edycjaWlasciciela.Visible = true;
-            btn_cofnijDoMenuWlascicieli.Visible = true;
-            pobierzWartosciDoEdycji();
-        }
-        private void pobierzWartosciDoEdycji()
-        {
-            if (dataGridView_listaWlascicieli.SelectedRows.Count > 0)
-            {
-                DataGridViewRow wybranyWiersz = dataGridView_listaWlascicieli.SelectedRows[0];
-                string id = wybranyWiersz.Cells[0].Value.ToString();
-                textBox_idEdytowanegoWlasciciela.Text = id;
-                string imie = wybranyWiersz.Cells[1].Value.ToString();
-                textBox_imieEdytowanegoWlasciciela.Text = imie;
-                string nazwisko = wybranyWiersz.Cells[2].Value.ToString();
-                textBox_nazwiskoEdytowanegoWlasciciela.Text = nazwisko;
-                string plec = wybranyWiersz.Cells[3].Value.ToString();
-                comboBox_plecEdytowanegoWlasciciela.Text = plec;
-                string adres = wybranyWiersz.Cells[4].Value.ToString();
-                textBox_adresEdytowanegoWlasciciela.Text = adres;
-                string nrTelefonu = wybranyWiersz.Cells[5].Value.ToString();
-                textBox_nrTelefonuEdytowanegoWlasciciela.Text = nrTelefonu;
-                string mail = wybranyWiersz.Cells[6].Value.ToString();
-                textBox_mailEdytowanegoWlasciciela.Text = mail;
-            }
-        }
-        private void usunWybranegoWlasciciela()
-        {
-            DataGridViewRow wybranyKlient = dataGridView_listaWlascicieli.SelectedRows[0];
-            string idKlienta = wybranyKlient.Cells["id"].Value.ToString();
-            Klient klientDoUsuniecia = null;
-            foreach (Klient klient in klienci)
-            {
-                if (klient.id == idKlienta)
-                {
-                    klientDoUsuniecia = klient;
-                    break;
-                }
-            }
-            DialogResult usunKlienta = MessageBox.Show("Czy na pewno chcesz usunąć wybranego właściciela?", "Ostrzeżenie", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
-            if (usunKlienta != DialogResult.Yes)
-            {
-                return;
-            }
-            klienci.Remove(klientDoUsuniecia);
-            dataGridView_listaWlascicieli.ClearSelection();
-            foreach (Klient klient in klienci)
-            {
-                // Zmniejsz numer ID o 1 dla wizyt po usuniętej
-                string idText = klient.id;
-                int id = int.Parse(idText);
-                if (id > int.Parse(idKlienta))
-                {
-                    id--;
-                    klient.id = id.ToString();
-                }
-            }
-            // Odśwież widok tabeli
-            wyswietlTabelkaWlascicieli();
-            // Zapisz zmiany do pliku
-            ZapiszWlascicieliDoPliku(@"C:\Users\Luke\Desktop\klienci.txt");
-        }
-        private void btn_usuwanieWlasciciela_Click(object sender, EventArgs e)
-        {
-            usunWybranegoWlasciciela();
         }
     }
 }

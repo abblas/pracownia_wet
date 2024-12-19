@@ -1,0 +1,10 @@
+Id-Imie-Nazwisko-Plec-Specjalizacja-NrTelefonu-Email
+1-Paweł-Olszewski-Mężczyzna-Lekarz ogólny-456436534-olszewskipawel@vetanimal.com
+2-Barbara-Stępień-Kobieta-Chirurg-678382642-stepienbarbara@vetanimal.coM
+3-Beata-Baran-Kobieta-Neurolog-469853151-baranbeata@vetanimal.com
+4-Robert-Marcinkiewicz-Mężczyzna-Dermatolog-454564353-marcinkiewiczrobert@vetanimal.com
+5-Aleksandra-Mleczko-Kobieta-Kardiolog-789751348-mleczkoaleksandra@vetanimal.com
+6-Joanna-Kotwica-Kobieta-Okulista-645546543-kotwicajoanna@vetanimal.com
+7-Mateusz-Kostkiewicz-Mężczyzna-Onkolog-618676434-kostkiewiczmateusz@vetanimal.com
+8-Wojciech-Frytka-Mężczyzna-Ortopeda-619875317-frytkawojciech@vetanimal.com
+9-Kinga-Słowik-Kobieta-Stomatolog-598713479-slowikkinga@vetanimal.com

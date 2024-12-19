@@ -10,9 +10,6 @@ namespace Przychodnia
         {
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
-            //ApplicationConfiguration.Initialize();
-            //Application.Run(new Logowanie());
-            //Application.Run(new Przychodnia());
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
@@ -30,7 +27,9 @@ namespace Przychodnia
                     // Jeœli logowanie siê nie powiod³o, zamykamy aplikacjê
                     Application.Exit();
                 }
+
             }
+
         }
     }
 }

@@ -84,6 +84,7 @@
             label_wlascicielEdytowanejWizyty = new Label();
             btn_usuwanieWizyty = new Button();
             label_usuwanieWizyty = new Label();
+            label_edytowanieWizyty = new Label();
             panel_Wizyty.SuspendLayout();
             panel_NowaWizyta.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pacjentBindingSource).BeginInit();
@@ -190,7 +191,7 @@
             comboBox_lekarz.Name = "comboBox_lekarz";
             comboBox_lekarz.Size = new Size(238, 38);
             comboBox_lekarz.Sorted = true;
-            comboBox_lekarz.TabIndex = 25;
+            comboBox_lekarz.TabIndex = 11;
             // 
             // comboBox_wlasciciel
             // 
@@ -200,7 +201,7 @@
             comboBox_wlasciciel.Name = "comboBox_wlasciciel";
             comboBox_wlasciciel.Size = new Size(238, 38);
             comboBox_wlasciciel.Sorted = true;
-            comboBox_wlasciciel.TabIndex = 24;
+            comboBox_wlasciciel.TabIndex = 10;
             // 
             // comboBox_Pacjent
             // 
@@ -490,7 +491,7 @@
             comboBox_lekarzEdytowanejWizyty.Name = "comboBox_lekarzEdytowanejWizyty";
             comboBox_lekarzEdytowanejWizyty.Size = new Size(238, 38);
             comboBox_lekarzEdytowanejWizyty.Sorted = true;
-            comboBox_lekarzEdytowanejWizyty.TabIndex = 26;
+            comboBox_lekarzEdytowanejWizyty.TabIndex = 11;
             // 
             // comboBox_wlascicielEdytowanejWizyty
             // 
@@ -500,7 +501,7 @@
             comboBox_wlascicielEdytowanejWizyty.Name = "comboBox_wlascicielEdytowanejWizyty";
             comboBox_wlascicielEdytowanejWizyty.Size = new Size(238, 38);
             comboBox_wlascicielEdytowanejWizyty.Sorted = true;
-            comboBox_wlascicielEdytowanejWizyty.TabIndex = 25;
+            comboBox_wlascicielEdytowanejWizyty.TabIndex = 10;
             // 
             // comboBox_pacjentEdytowanejWizyty
             // 
@@ -510,7 +511,7 @@
             comboBox_pacjentEdytowanejWizyty.Name = "comboBox_pacjentEdytowanejWizyty";
             comboBox_pacjentEdytowanejWizyty.Size = new Size(145, 38);
             comboBox_pacjentEdytowanejWizyty.Sorted = true;
-            comboBox_pacjentEdytowanejWizyty.TabIndex = 24;
+            comboBox_pacjentEdytowanejWizyty.TabIndex = 9;
             // 
             // dateTimePicker_godzinaEdytowanejWizyty
             // 
@@ -667,6 +668,16 @@
             label_usuwanieWizyty.Text = "Wybierz wizytę do usunięcia";
             label_usuwanieWizyty.Visible = false;
             // 
+            // label_edytowanieWizyty
+            // 
+            label_edytowanieWizyty.Font = new Font("Calibri", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            label_edytowanieWizyty.Location = new Point(342, 272);
+            label_edytowanieWizyty.Name = "label_edytowanieWizyty";
+            label_edytowanieWizyty.Size = new Size(236, 27);
+            label_edytowanieWizyty.TabIndex = 36;
+            label_edytowanieWizyty.Text = "Wybierz wizytę do edycji";
+            label_edytowanieWizyty.Visible = false;
+            // 
             // Menu_Wizyty
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -678,11 +689,12 @@
             Controls.Add(dataGridView_listaWizyt);
             Controls.Add(label_VetAnimal);
             Controls.Add(btn_cofnijDoMenuWizyt);
-            Controls.Add(label_usuwanieWizyty);
-            Controls.Add(label_ListaWizyt);
+            Controls.Add(panel_edycjaWizyty);
             Controls.Add(panel_Wizyty);
             Controls.Add(panel_NowaWizyta);
-            Controls.Add(panel_edycjaWizyty);
+            Controls.Add(label_edytowanieWizyty);
+            Controls.Add(label_usuwanieWizyty);
+            Controls.Add(label_ListaWizyt);
             Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 238);
             Name = "Menu_Wizyty";
             Text = "Wizyty";
@@ -750,5 +762,6 @@
         private ComboBox comboBox_wlascicielEdytowanejWizyty;
         private ComboBox comboBox_lekarzEdytowanejWizyty;
         private ComboBox comboBox_lekarz;
+        private Label label_edytowanieWizyty;
     }
 }

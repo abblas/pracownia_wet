@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
             label_VetAnimal = new Label();
-            btn_menuGlowne = new Button();
+            btn_wrocDoMenuGlownego = new Button();
             panel_Lekarze = new Panel();
             btn_ListaLekarzy = new Button();
             btn_UsunLekarza = new Button();
@@ -81,6 +81,7 @@
             btn_usuwanieLekarza = new Button();
             btn_cofnijDoMenuLekarzy = new Button();
             label_lekarzDoEdycji = new Label();
+            label_usuwanieLekarza = new Label();
             panel_Lekarze.SuspendLayout();
             panel_DodajLekarza.SuspendLayout();
             panel_edycjaLekarza.SuspendLayout();
@@ -99,19 +100,19 @@
             label_VetAnimal.Text = "VetAnimal";
             label_VetAnimal.TextAlign = ContentAlignment.TopCenter;
             // 
-            // btn_menuGlowne
+            // btn_wrocDoMenuGlownego
             // 
-            btn_menuGlowne.BackColor = SystemColors.Highlight;
-            btn_menuGlowne.Font = new Font("DejaVu Sans Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btn_menuGlowne.ForeColor = SystemColors.ButtonFace;
-            btn_menuGlowne.ImageAlign = ContentAlignment.TopCenter;
-            btn_menuGlowne.Location = new Point(95, 100);
-            btn_menuGlowne.Name = "btn_menuGlowne";
-            btn_menuGlowne.Size = new Size(129, 34);
-            btn_menuGlowne.TabIndex = 36;
-            btn_menuGlowne.Text = "Menu Główne";
-            btn_menuGlowne.UseVisualStyleBackColor = false;
-            btn_menuGlowne.Click += btn_menuGlowne_Click;
+            btn_wrocDoMenuGlownego.BackColor = SystemColors.Highlight;
+            btn_wrocDoMenuGlownego.Font = new Font("DejaVu Sans Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btn_wrocDoMenuGlownego.ForeColor = SystemColors.ButtonFace;
+            btn_wrocDoMenuGlownego.ImageAlign = ContentAlignment.TopCenter;
+            btn_wrocDoMenuGlownego.Location = new Point(95, 100);
+            btn_wrocDoMenuGlownego.Name = "btn_wrocDoMenuGlownego";
+            btn_wrocDoMenuGlownego.Size = new Size(129, 34);
+            btn_wrocDoMenuGlownego.TabIndex = 36;
+            btn_wrocDoMenuGlownego.Text = "Menu Główne";
+            btn_wrocDoMenuGlownego.UseVisualStyleBackColor = false;
+            btn_wrocDoMenuGlownego.Click += btn_wrocDoMenuGlownego_Click;
             // 
             // panel_Lekarze
             // 
@@ -197,11 +198,12 @@
             comboBox_specjalizacjaLekarza.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox_specjalizacjaLekarza.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 238);
             comboBox_specjalizacjaLekarza.FormattingEnabled = true;
-            comboBox_specjalizacjaLekarza.Items.AddRange(new object[] { "Lekarz ogólny", "Chirurg", "Kardiolog", "Dermatolog", "Onkolog", "Neurolog", "Okulista", "Ortopeda", "Stomatolog" });
+            comboBox_specjalizacjaLekarza.Items.AddRange(new object[] { "Chirurg", "Dermatolog", "Kardiolog", "Lekarz ogólny", "Neurolog", "Okulista", "Onkolog", "Ortopeda", "Stomatolog" });
             comboBox_specjalizacjaLekarza.Location = new Point(140, 260);
             comboBox_specjalizacjaLekarza.Name = "comboBox_specjalizacjaLekarza";
             comboBox_specjalizacjaLekarza.Size = new Size(288, 38);
-            comboBox_specjalizacjaLekarza.TabIndex = 31;
+            comboBox_specjalizacjaLekarza.Sorted = true;
+            comboBox_specjalizacjaLekarza.TabIndex = 5;
             // 
             // textBox_nrTelefonuLekarza
             // 
@@ -380,11 +382,12 @@
             comboBox_specjalizacjaEdytowanegoLekarza.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox_specjalizacjaEdytowanegoLekarza.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 238);
             comboBox_specjalizacjaEdytowanegoLekarza.FormattingEnabled = true;
-            comboBox_specjalizacjaEdytowanegoLekarza.Items.AddRange(new object[] { "Lekarz ogólny", "Chirurg", "Kardiolog", "Dermatolog", "Onkolog", "Neurolog", "Okulista", "Ortopeda", "Stomatolog" });
+            comboBox_specjalizacjaEdytowanegoLekarza.Items.AddRange(new object[] { "Chirurg", "Dermatolog", "Kardiolog", "Lekarz ogólny", "Neurolog", "Okulista", "Onkolog", "Ortopeda", "Stomatolog" });
             comboBox_specjalizacjaEdytowanegoLekarza.Location = new Point(140, 260);
             comboBox_specjalizacjaEdytowanegoLekarza.Name = "comboBox_specjalizacjaEdytowanegoLekarza";
             comboBox_specjalizacjaEdytowanegoLekarza.Size = new Size(288, 38);
-            comboBox_specjalizacjaEdytowanegoLekarza.TabIndex = 31;
+            comboBox_specjalizacjaEdytowanegoLekarza.Sorted = true;
+            comboBox_specjalizacjaEdytowanegoLekarza.TabIndex = 5;
             // 
             // textBox_nrTelefonuEdytowanegoLekarza
             // 
@@ -540,39 +543,39 @@
             dataGridView_listaLekarzy.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView_listaLekarzy.BackgroundColor = SystemColors.ButtonHighlight;
             dataGridView_listaLekarzy.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = SystemColors.Control;
-            dataGridViewCellStyle1.Font = new Font("Arial Narrow", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Control;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
-            dataGridView_listaLekarzy.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = SystemColors.Control;
+            dataGridViewCellStyle5.Font = new Font("Arial Narrow", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 238);
+            dataGridViewCellStyle5.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Control;
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.False;
+            dataGridView_listaLekarzy.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             dataGridView_listaLekarzy.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView_listaLekarzy.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2 });
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = SystemColors.Window;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dataGridView_listaLekarzy.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = SystemColors.Window;
+            dataGridViewCellStyle6.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 238);
+            dataGridViewCellStyle6.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
+            dataGridView_listaLekarzy.DefaultCellStyle = dataGridViewCellStyle6;
             dataGridView_listaLekarzy.Location = new Point(327, 514);
             dataGridView_listaLekarzy.MultiSelect = false;
             dataGridView_listaLekarzy.Name = "dataGridView_listaLekarzy";
             dataGridView_listaLekarzy.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = SystemColors.Control;
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Control;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dataGridView_listaLekarzy.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = SystemColors.Control;
+            dataGridViewCellStyle7.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 238);
+            dataGridViewCellStyle7.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = SystemColors.Control;
+            dataGridViewCellStyle7.SelectionForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
+            dataGridView_listaLekarzy.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
             dataGridView_listaLekarzy.RowHeadersWidth = 20;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridView_listaLekarzy.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView_listaLekarzy.RowsDefaultCellStyle = dataGridViewCellStyle8;
             dataGridView_listaLekarzy.RowTemplate.Height = 50;
             dataGridView_listaLekarzy.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView_listaLekarzy.Size = new Size(1546, 307);
@@ -650,22 +653,33 @@
             label_lekarzDoEdycji.Text = "Wybierz lekarza do edytowania";
             label_lekarzDoEdycji.Visible = false;
             // 
+            // label_usuwanieLekarza
+            // 
+            label_usuwanieLekarza.Font = new Font("Calibri", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            label_usuwanieLekarza.Location = new Point(328, 484);
+            label_usuwanieLekarza.Name = "label_usuwanieLekarza";
+            label_usuwanieLekarza.Size = new Size(275, 27);
+            label_usuwanieLekarza.TabIndex = 47;
+            label_usuwanieLekarza.Text = "Wybierz lekarza do usunięcia";
+            label_usuwanieLekarza.Visible = false;
+            // 
             // Menu_Lekarze
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1879, 885);
-            Controls.Add(label_lekarzDoEdycji);
             Controls.Add(btn_cofnijDoMenuLekarzy);
-            Controls.Add(label_listaLekarzy);
             Controls.Add(dataGridView_listaLekarzy);
-            Controls.Add(btn_menuGlowne);
+            Controls.Add(btn_wrocDoMenuGlownego);
             Controls.Add(label_VetAnimal);
-            Controls.Add(panel_edycjaLekarza);
-            Controls.Add(panel_Lekarze);
             Controls.Add(btn_usuwanieLekarza);
             Controls.Add(btn_edytowanieLekarza);
             Controls.Add(panel_DodajLekarza);
+            Controls.Add(label_lekarzDoEdycji);
+            Controls.Add(label_listaLekarzy);
+            Controls.Add(label_usuwanieLekarza);
+            Controls.Add(panel_edycjaLekarza);
+            Controls.Add(panel_Lekarze);
             Name = "Menu_Lekarze";
             Text = "Menu_Lekarze";
             Load += Menu_Lekarze_Load;
@@ -681,7 +695,7 @@
         #endregion
 
         private Label label_VetAnimal;
-        private Button btn_menuGlowne;
+        private Button btn_wrocDoMenuGlownego;
         private Panel panel_Lekarze;
         private Button btn_ListaLekarzy;
         private Button btn_UsunLekarza;
@@ -729,5 +743,6 @@
         private Button btn_usuwanieLekarza;
         private Button btn_cofnijDoMenuLekarzy;
         private Label label_lekarzDoEdycji;
+        private Label label_usuwanieLekarza;
     }
 }

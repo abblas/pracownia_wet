@@ -11,8 +11,6 @@ namespace Przychodnia
         private string login;
         private string haslo;
         private string rola;
-
-
         //Tworzenie konstruktora z dwoma argumentami - login, hasło
         public Uzytkownik(string login, string haslo)
         {
@@ -26,7 +24,7 @@ namespace Przychodnia
             this.haslo = haslo;
             this.rola = rola;
         }
-        //Ustawienie właściwości dla loginu, hasła i roli
+        //Ustawienie właściwości dla loginu, hasła i roli (zastosowanie hermetyzacji)
         public string Login
         {
             get { return login; }
@@ -40,9 +38,67 @@ namespace Przychodnia
             get { return rola; }
         }
         //Metoda logowania
-        public virtual bool Zaloguj(string podanyLogin, string podaneHaslo)
+        public virtual bool Zaloguj(string login, string haslo)
         {
-            return this.login == podanyLogin && this.haslo == podaneHaslo;
+            return this.login == login && this.haslo == haslo; ;
+        }
+
+        // Pobierz użytkowników z pliku
+        public static List<Uzytkownik> PobierzUzytkownikowZPliku(string sciezka)
+        {
+            List<Uzytkownik> uzytkownicy = new List<Uzytkownik>();
+            {
+                string[] linie = File.ReadAllLines(sciezka);
+
+                foreach (var linia in linie)
+                {
+                    string[] dane = linia.Split(',');
+
+                    if (dane.Length == 3)
+                    {
+                        string login = dane[0];
+                        string haslo = dane[1];
+                        string rola = dane[2];
+
+                        uzytkownicy.Add(new Uzytkownik(login, haslo, rola));
+                    }
+                }
+            }
+            return uzytkownicy;
+        }
+        public class Administratorzy : Uzytkownik
+        {
+            public Administratorzy(string login, string haslo)
+                : base(login, haslo, "Administrator") { }
+
+            // Nadpisanie metody Zaloguj
+            public override bool Zaloguj(string podanyLogin, string podaneHaslo)
+            {
+                return base.Zaloguj(podanyLogin, podaneHaslo);
+            }
+        }
+        public class Recepcjoniści : Uzytkownik
+        {
+            public Recepcjoniści(string login, string haslo)
+                : base(login, haslo, "Recepcjonista") { }
+
+            // Nadpisanie metody Zaloguj
+            public override bool Zaloguj(string podanyLogin, string podaneHaslo)
+            {
+                return base.Zaloguj(podanyLogin, podaneHaslo);
+            }
+        }
+        public class Lekarze : Uzytkownik
+        {
+            public Lekarze(string login, string haslo)
+                : base(login, haslo, "Lekarz") { }
+
+            // Nadpisanie metody Zaloguj
+            public override bool Zaloguj(string podanyLogin, string podaneHaslo)
+            {
+                return base.Zaloguj(podanyLogin, podaneHaslo);
+            }
         }
     }
 }
+

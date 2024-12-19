@@ -23,11 +23,6 @@ namespace Przychodnia
 		{
 			this.imie = imie;
 		}
-        //Nadpisywanie metody ToString(), aby zwracała imię pacjenta
-        public override string ToString()
-        {
-            return imie;
-        }
         //Tworzenie konstruktora z kilkoma argumentami
         public Pacjent(string id, string imie, string gatunek, string rasa, string plec, DateTime dataUrodzenia, string waga, Klient wlasciciel)
         {
@@ -58,6 +53,11 @@ namespace Przychodnia
             this.id = id;
             this.imie = imie;
             this.wlasciciel = wlasciciel;
+        }
+        //Nadpisywanie metody ToString(), aby zwracała imię pacjenta
+        public override string ToString()
+        {
+            return imie;
         }
         //Tworzenie metody do generowania nowego numeru ID pacjenta po dodaniu nowego pacjenta do bazy
         public static string GenerujNoweId()

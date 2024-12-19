@@ -46,6 +46,26 @@ namespace Przychodnia
             Menu_Lekarze menu_Lekarze = new Menu_Lekarze();
             menu_Lekarze.Show();
         }
+
+        private void btn_wyloguj_Click(object sender, EventArgs e)
+        {
+            this.Hide(); // Ukryj bie¿¹ce okno
+
+            using (Logowanie logowanie = new Logowanie())
+            {
+                if (logowanie.ShowDialog() == DialogResult.OK)
+                {
+                    // Jeœli u¿ytkownik zaloguje siê ponownie, poka¿ g³ówn¹ aplikacjê
+                    this.Show();
+                }
+                else
+                {
+                    // Jeœli u¿ytkownik zamknie ekran logowania, zakoñcz aplikacjê
+                    this.Close();
+                }
+            }
+
+        }
     }
 }
 
