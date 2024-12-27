@@ -41,11 +41,10 @@ namespace Przychodnia
         {
             string login = textBox_login.Text;
             string haslo = textBox_haslo.Text;
-
             if (SprawdzUzytkownika(login, haslo))
             {
                 // Przekazanie zalogowanego użytkownika do głównego okna
-                MessageBox.Show($"Zalogowano jako: {ZalogowanyUzytkownik.Rola}");
+                MessageBox.Show("Zalogowano jako: " + " " + ZalogowanyUzytkownik.Rola);
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }

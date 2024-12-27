@@ -19,8 +19,9 @@ namespace Przychodnia
             {
                 if (logowanie.ShowDialog() == DialogResult.OK) // Jeœli u¿ytkownik kliknie "Zaloguj"
                 {
+                    Uzytkownik zalogowanyUzytkownik = logowanie.ZalogowanyUzytkownik;
                     // Uruchamiamy g³ówny formularz po zalogowaniu
-                    Application.Run(new Przychodnia());
+                    Application.Run(new Przychodnia(zalogowanyUzytkownik));
                 }
                 else
                 {

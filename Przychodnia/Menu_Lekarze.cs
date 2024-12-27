@@ -7,7 +7,7 @@ namespace Przychodnia
         {
             InitializeComponent();
             ustawieniaDataGridView_listaLekarzy();
-        }  
+        }
         public List<Lekarz> lekarze = new List<Lekarz>();
         private void Menu_Lekarze_Load(object sender, EventArgs e)
         {
@@ -324,6 +324,5 @@ namespace Przychodnia
 
             }
         }
-        
     }
 }

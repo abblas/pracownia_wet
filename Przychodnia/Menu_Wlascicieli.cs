@@ -3,12 +3,16 @@ namespace Przychodnia
 {
     public partial class Menu_Wlascicieli : Form
     {
-        public Menu_Wlascicieli()
+        private Uzytkownik zalogowanyUzytkownik;
+        public Menu_Wlascicieli(Uzytkownik uzytkownik)
         {
             InitializeComponent();
             ustawieniaDataGridView_listaWlascicieli();
-        } 
+            this.zalogowanyUzytkownik = uzytkownik;
+            OgraniczDostepDoKontrolek();
+        }
         public List<Klient> klienci = new List<Klient>();
+        public List<Uzytkownik> uzytkownicy = new List<Uzytkownik>();
         private void Menu_Wlascicieli_Load(object sender, EventArgs e)
         {
             OdczytajWlascicieliZPliku(@"E:\WSB\Baza danych do przychodni\klienci.txt");
@@ -70,6 +74,13 @@ namespace Przychodnia
             btn_edycjaWlasciciela.Visible = true;
             label_wlascicielDoEdycji.Visible = true;
             dataGridView_listaWlascicieli.ClearSelection();
+
+            //Uzytkownik uzytkownik = new Uzytkownik(rola)
+            //    string rola = 
+            //if ()
+            //    {
+
+            //})
         }
         private void btn_edycjaWlasciciela_Click(object sender, EventArgs e)
         {
@@ -321,6 +332,20 @@ namespace Przychodnia
                 // Jeśli nie ma zaznaczonego wiersza, wyłącz przycisk "Edytuj"
                 btn_edycjaWlasciciela.Enabled = false;
                 btn_usuwanieWlasciciela.Enabled = false;
+            }
+        }
+        private void OgraniczDostepDoKontrolek()
+        {
+            // Sprawdzamy rolę użytkownika
+            if (zalogowanyUzytkownik.Rola != "Administrator")
+            {
+                // Jeśli użytkownik nie jest administratorem, wyłączamy przycisk usuwania wizyty
+                btn_UsunWłaściciela.Enabled = false;
+            }
+            else
+            {
+                // Jeśli użytkownik jest administratorem, przycisk pozostaje włączony
+                btn_UsunWłaściciela.Enabled = true;
             }
         }
     }

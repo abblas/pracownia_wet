@@ -4,10 +4,13 @@ namespace Przychodnia
 {
     public partial class Menu_Wizyty : Form
     {
-        public Menu_Wizyty()
+        private Uzytkownik zalogowanyUzytkownik;
+        public Menu_Wizyty(Uzytkownik uzytkownik)
         {
             InitializeComponent();
             ustawieniaDataGridView_listaWizyt();
+            this.zalogowanyUzytkownik = uzytkownik;
+            OgraniczDostepDoKontrolek();
         }
         private List<Wizyta> wizyty = new List<Wizyta>();
         private void Menu_Wizyty_Load(object sender, EventArgs e)
@@ -492,6 +495,20 @@ namespace Przychodnia
                 // Ustaw właściciela w odpowiednim polu formularza (np. TextBox)
                 comboBox_wlasciciel.Text = wybranyPacjent.wlasciciel.ToString();
                 comboBox_wlascicielEdytowanejWizyty.Text = wybranyPacjent.wlasciciel.ToString();
+            }
+        }
+        private void OgraniczDostepDoKontrolek()
+        {
+            // Sprawdzamy rolę użytkownika
+            if (zalogowanyUzytkownik.Rola != "Administrator")
+            {
+                // Jeśli użytkownik nie jest administratorem, wyłączamy przycisk usuwania wizyty
+                btn_UsunWizyte.Enabled = false;
+            }
+            else
+            {
+                // Jeśli użytkownik jest administratorem, przycisk pozostaje włączony
+                btn_UsunWizyte.Enabled = true;
             }
         }
         public class WczytywanieKlientow

@@ -11,6 +11,11 @@ namespace Przychodnia
         private string login;
         private string haslo;
         private string rola;
+        public Uzytkownik(string rola)
+        {
+            this.rola = rola;
+        }
+
         //Tworzenie konstruktora z dwoma argumentami - login, hasło
         public Uzytkownik(string login, string haslo)
         {

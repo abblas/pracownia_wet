@@ -9,9 +9,12 @@ namespace Przychodnia
 {
     public partial class Przychodnia : Form
     {
-        public Przychodnia()
+        private Uzytkownik zalogowanyUzytkownik;
+        public Przychodnia(Uzytkownik uzytkownik)
         {
             InitializeComponent();
+            this.zalogowanyUzytkownik = uzytkownik;
+            OgraniczDostepDoKontrolek();
         }
         private void label_VetAnimal_Click(object sender, EventArgs e)
         {
@@ -19,7 +22,7 @@ namespace Przychodnia
         }
         private void btn_Wizyty_Click(object sender, EventArgs e)
         {
-            Menu_Wizyty menu_Wizyty = new Menu_Wizyty();
+            Menu_Wizyty menu_Wizyty = new Menu_Wizyty(zalogowanyUzytkownik);
             menu_Wizyty.Show();
         }
         private void btn_Pacjenci_Click(object sender, EventArgs e)
@@ -29,7 +32,7 @@ namespace Przychodnia
         }
         private void btn_Wlasciciele_Click(object sender, EventArgs e)
         {
-            Menu_Wlascicieli menu_wlascicieli = new Menu_Wlascicieli();
+            Menu_Wlascicieli menu_wlascicieli = new Menu_Wlascicieli(zalogowanyUzytkownik);
             menu_wlascicieli.Show();
         }
         private void Przychodnia_Load(object sender, EventArgs e)
@@ -40,22 +43,25 @@ namespace Przychodnia
         {
             this.Close();
         }
-
         private void btn_Lekarze_Click(object sender, EventArgs e)
         {
             Menu_Lekarze menu_Lekarze = new Menu_Lekarze();
             menu_Lekarze.Show();
         }
-
         private void btn_wyloguj_Click(object sender, EventArgs e)
         {
+            OgraniczDostepDoKontrolek();
             this.Hide(); // Ukryj bie¿¹ce okno
+            zalogowanyUzytkownik = null; // Wyzerowanie obecnie zalogowanego u¿ytkownika
 
             using (Logowanie logowanie = new Logowanie())
             {
                 if (logowanie.ShowDialog() == DialogResult.OK)
                 {
-                    // Jeœli u¿ytkownik zaloguje siê ponownie, poka¿ g³ówn¹ aplikacjê
+                    // Przypisz nowego zalogowanego u¿ytkownika
+                    zalogowanyUzytkownik = logowanie.ZalogowanyUzytkownik;
+
+                    // Zaktualizuj interfejs w zale¿noœci od nowej roli u¿ytkownika
                     this.Show();
                 }
                 else
@@ -64,7 +70,20 @@ namespace Przychodnia
                     this.Close();
                 }
             }
-
+        }
+        private void OgraniczDostepDoKontrolek()
+        {
+            // Sprawdzamy rolê u¿ytkownika
+            if (zalogowanyUzytkownik.Rola != "Administrator")
+            {
+                // Jeœli u¿ytkownik nie jest administratorem, wy³¹czamy przycisk usuwania wizyty
+                btn_Lekarze.Enabled = false;
+            }
+            else
+            {
+                // Jeœli u¿ytkownik jest administratorem, przycisk pozostaje w³¹czony
+                btn_Lekarze.Enabled = true;
+            }
         }
     }
 }
