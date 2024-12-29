@@ -99,7 +99,7 @@ Główne elementy paradygmatu obiektowego
 
 ## Diagram klas UML
 Diagram klas UML przedstawia relacje między klasami ich metody i właściwości.
-(Diagram zostanie dołączony w pliku PDF)
+(Diagram zostanie dołączony w pliku diagram klas.png)
 
 ## Autorzy
 Łukasz Chodzicki, Jakub Piasecki
