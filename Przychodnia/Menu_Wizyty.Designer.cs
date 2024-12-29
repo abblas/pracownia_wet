@@ -697,7 +697,9 @@
             Controls.Add(label_ListaWizyt);
             Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 238);
             Name = "Menu_Wizyty";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Wizyty";
+            WindowState = FormWindowState.Maximized;
             Load += Menu_Wizyty_Load;
             panel_Wizyty.ResumeLayout(false);
             panel_NowaWizyta.ResumeLayout(false);

@@ -14,7 +14,6 @@ namespace Przychodnia
         {
             InitializeComponent();
             this.zalogowanyUzytkownik = uzytkownik;
-            OgraniczDostepDoKontrolek();
         }
         private void label_VetAnimal_Click(object sender, EventArgs e)
         {
@@ -27,7 +26,7 @@ namespace Przychodnia
         }
         private void btn_Pacjenci_Click(object sender, EventArgs e)
         {
-            Menu_Pacjenci menu_Pacjenci = new Menu_Pacjenci();
+            Menu_Pacjenci menu_Pacjenci = new Menu_Pacjenci(zalogowanyUzytkownik);
             menu_Pacjenci.Show();
         }
         private void btn_Wlasciciele_Click(object sender, EventArgs e)
@@ -45,12 +44,11 @@ namespace Przychodnia
         }
         private void btn_Lekarze_Click(object sender, EventArgs e)
         {
-            Menu_Lekarze menu_Lekarze = new Menu_Lekarze();
+            Menu_Lekarze menu_Lekarze = new Menu_Lekarze(zalogowanyUzytkownik);
             menu_Lekarze.Show();
         }
         private void btn_wyloguj_Click(object sender, EventArgs e)
         {
-            OgraniczDostepDoKontrolek();
             this.Hide(); // Ukryj bie¿¹ce okno
             zalogowanyUzytkownik = null; // Wyzerowanie obecnie zalogowanego u¿ytkownika
 
@@ -69,20 +67,6 @@ namespace Przychodnia
                     // Jeœli u¿ytkownik zamknie ekran logowania, zakoñcz aplikacjê
                     this.Close();
                 }
-            }
-        }
-        private void OgraniczDostepDoKontrolek()
-        {
-            // Sprawdzamy rolê u¿ytkownika
-            if (zalogowanyUzytkownik.Rola != "Administrator")
-            {
-                // Jeœli u¿ytkownik nie jest administratorem, wy³¹czamy przycisk usuwania wizyty
-                btn_Lekarze.Enabled = false;
-            }
-            else
-            {
-                // Jeœli u¿ytkownik jest administratorem, przycisk pozostaje w³¹czony
-                btn_Lekarze.Enabled = true;
             }
         }
     }

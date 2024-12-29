@@ -114,6 +114,7 @@
             ClientSize = new Size(800, 450);
             Controls.Add(panel1);
             Name = "Logowanie";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Logowanie";
             Load += Logowanie_Load;
             panel1.ResumeLayout(false);

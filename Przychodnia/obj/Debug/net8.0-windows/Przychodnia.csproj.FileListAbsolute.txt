@@ -61,3 +61,24 @@ C:\Users\Luke\source\repos\pracownia_wet-main\Przychodnia\obj\Debug\net8.0-windo
 C:\Users\Luke\source\repos\pracownia_wet-main\Przychodnia\obj\Debug\net8.0-windows\Przychodnia.pdb
 C:\Users\Luke\source\repos\pracownia_wet-main\Przychodnia\obj\Debug\net8.0-windows\Przychodnia.genruntimeconfig.cache
 C:\Users\Luke\source\repos\pracownia_wet-main\Przychodnia\obj\Debug\net8.0-windows\ref\Przychodnia.dll
+d:\Users\Luke\Documents\WSB\Podstawy Programowania\Programy\Kopia przychodni z komentarzami do nauki\Przychodnia\bin\Debug\net8.0-windows\Przychodnia.exe
+d:\Users\Luke\Documents\WSB\Podstawy Programowania\Programy\Kopia przychodni z komentarzami do nauki\Przychodnia\bin\Debug\net8.0-windows\Przychodnia.deps.json
+d:\Users\Luke\Documents\WSB\Podstawy Programowania\Programy\Kopia przychodni z komentarzami do nauki\Przychodnia\bin\Debug\net8.0-windows\Przychodnia.runtimeconfig.json
+d:\Users\Luke\Documents\WSB\Podstawy Programowania\Programy\Kopia przychodni z komentarzami do nauki\Przychodnia\bin\Debug\net8.0-windows\Przychodnia.dll
+d:\Users\Luke\Documents\WSB\Podstawy Programowania\Programy\Kopia przychodni z komentarzami do nauki\Przychodnia\bin\Debug\net8.0-windows\Przychodnia.pdb
+d:\Users\Luke\Documents\WSB\Podstawy Programowania\Programy\Kopia przychodni z komentarzami do nauki\Przychodnia\obj\Debug\net8.0-windows\Przychodnia.Logowanie.resources
+d:\Users\Luke\Documents\WSB\Podstawy Programowania\Programy\Kopia przychodni z komentarzami do nauki\Przychodnia\obj\Debug\net8.0-windows\Przychodnia.Menu_Lekarze.resources
+d:\Users\Luke\Documents\WSB\Podstawy Programowania\Programy\Kopia przychodni z komentarzami do nauki\Przychodnia\obj\Debug\net8.0-windows\Przychodnia.Menu_Pacjenci.resources
+d:\Users\Luke\Documents\WSB\Podstawy Programowania\Programy\Kopia przychodni z komentarzami do nauki\Przychodnia\obj\Debug\net8.0-windows\Przychodnia.Menu_Wizyty.resources
+d:\Users\Luke\Documents\WSB\Podstawy Programowania\Programy\Kopia przychodni z komentarzami do nauki\Przychodnia\obj\Debug\net8.0-windows\Przychodnia.Menu_Wlascicieli.resources
+d:\Users\Luke\Documents\WSB\Podstawy Programowania\Programy\Kopia przychodni z komentarzami do nauki\Przychodnia\obj\Debug\net8.0-windows\Przychodnia.Przychodnia.resources
+d:\Users\Luke\Documents\WSB\Podstawy Programowania\Programy\Kopia przychodni z komentarzami do nauki\Przychodnia\obj\Debug\net8.0-windows\Przychodnia.csproj.GenerateResource.cache
+d:\Users\Luke\Documents\WSB\Podstawy Programowania\Programy\Kopia przychodni z komentarzami do nauki\Przychodnia\obj\Debug\net8.0-windows\Przychodnia.GeneratedMSBuildEditorConfig.editorconfig
+d:\Users\Luke\Documents\WSB\Podstawy Programowania\Programy\Kopia przychodni z komentarzami do nauki\Przychodnia\obj\Debug\net8.0-windows\Przychodnia.AssemblyInfoInputs.cache
+d:\Users\Luke\Documents\WSB\Podstawy Programowania\Programy\Kopia przychodni z komentarzami do nauki\Przychodnia\obj\Debug\net8.0-windows\Przychodnia.AssemblyInfo.cs
+d:\Users\Luke\Documents\WSB\Podstawy Programowania\Programy\Kopia przychodni z komentarzami do nauki\Przychodnia\obj\Debug\net8.0-windows\Przychodnia.csproj.CoreCompileInputs.cache
+d:\Users\Luke\Documents\WSB\Podstawy Programowania\Programy\Kopia przychodni z komentarzami do nauki\Przychodnia\obj\Debug\net8.0-windows\Przychodnia.dll
+d:\Users\Luke\Documents\WSB\Podstawy Programowania\Programy\Kopia przychodni z komentarzami do nauki\Przychodnia\obj\Debug\net8.0-windows\refint\Przychodnia.dll
+d:\Users\Luke\Documents\WSB\Podstawy Programowania\Programy\Kopia przychodni z komentarzami do nauki\Przychodnia\obj\Debug\net8.0-windows\Przychodnia.pdb
+d:\Users\Luke\Documents\WSB\Podstawy Programowania\Programy\Kopia przychodni z komentarzami do nauki\Przychodnia\obj\Debug\net8.0-windows\Przychodnia.genruntimeconfig.cache
+d:\Users\Luke\Documents\WSB\Podstawy Programowania\Programy\Kopia przychodni z komentarzami do nauki\Przychodnia\obj\Debug\net8.0-windows\ref\Przychodnia.dll

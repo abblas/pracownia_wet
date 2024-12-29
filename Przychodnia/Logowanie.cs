@@ -81,6 +81,14 @@ namespace Przychodnia
                         {
                             ZalogowanyUzytkownik = new Administratorzy(loginZPliku, hasloZPliku);
                         }
+                        else if (rola == "Kierownik przychodni")
+                        {
+                            ZalogowanyUzytkownik = new KierownicyPrzychodni(loginZPliku, hasloZPliku);
+                        }
+                        else if (rola == "Kierownik recepcji")
+                        {
+                            ZalogowanyUzytkownik = new KierownicyRecepcji(loginZPliku, hasloZPliku);
+                        }
                         else if (rola == "Recepcjonista")
                         {
                             ZalogowanyUzytkownik = new Recepcjoniści(loginZPliku, hasloZPliku);

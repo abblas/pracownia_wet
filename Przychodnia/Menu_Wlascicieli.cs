@@ -16,7 +16,7 @@ namespace Przychodnia
         private void Menu_Wlascicieli_Load(object sender, EventArgs e)
         {
             OdczytajWlascicieliZPliku(@"E:\WSB\Baza danych do przychodni\klienci.txt");
-            dataGridView_listaWlascicieli.SelectionChanged += new EventHandler(dataGridView_listaWlascicieli_SelectionChanged);
+            dataGridView_listaWlascicieli.SelectionChanged += dataGridView_listaWlascicieli_SelectionChanged;
         }
         private void btn_ListaWlascicieli_Click(object sender, EventArgs e)
         {
@@ -337,16 +337,18 @@ namespace Przychodnia
         private void OgraniczDostepDoKontrolek()
         {
             // Sprawdzamy rolę użytkownika
-            if (zalogowanyUzytkownik.Rola != "Administrator")
+            if (zalogowanyUzytkownik.Rola == "Lekarz")
             {
-                // Jeśli użytkownik nie jest administratorem, wyłączamy przycisk usuwania wizyty
+                btn_DodajWłaściciela.Enabled = false;
+                btn_EdytujWłaściciela.Enabled = false;
                 btn_UsunWłaściciela.Enabled = false;
             }
-            else
+            else if (zalogowanyUzytkownik.Rola == "Recepcjonista")
             {
-                // Jeśli użytkownik jest administratorem, przycisk pozostaje włączony
-                btn_UsunWłaściciela.Enabled = true;
+                btn_EdytujWłaściciela.Enabled = false;
+                btn_UsunWłaściciela.Enabled = false;
             }
+                 
         }
     }
 }

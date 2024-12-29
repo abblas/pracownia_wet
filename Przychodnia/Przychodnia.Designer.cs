@@ -164,7 +164,9 @@
             Controls.Add(btn_Wizyty);
             Controls.Add(label_VetAnimal);
             Name = "Przychodnia";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "VetAnimal";
+            WindowState = FormWindowState.Maximized;
             Load += Przychodnia_Load;
             ResumeLayout(false);
         }

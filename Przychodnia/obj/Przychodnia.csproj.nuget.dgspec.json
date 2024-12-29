@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Luke\\source\\repos\\Przychodnia\\Przychodnia.csproj": {}
+    "d:\\Users\\Luke\\Documents\\WSB\\Podstawy Programowania\\Programy\\Kopia przychodni z komentarzami do nauki\\Przychodnia\\Przychodnia.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Luke\\source\\repos\\Przychodnia\\Przychodnia.csproj": {
+    "d:\\Users\\Luke\\Documents\\WSB\\Podstawy Programowania\\Programy\\Kopia przychodni z komentarzami do nauki\\Przychodnia\\Przychodnia.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Luke\\source\\repos\\Przychodnia\\Przychodnia.csproj",
+        "projectUniqueName": "d:\\Users\\Luke\\Documents\\WSB\\Podstawy Programowania\\Programy\\Kopia przychodni z komentarzami do nauki\\Przychodnia\\Przychodnia.csproj",
         "projectName": "Przychodnia",
-        "projectPath": "C:\\Users\\Luke\\source\\repos\\Przychodnia\\Przychodnia.csproj",
+        "projectPath": "d:\\Users\\Luke\\Documents\\WSB\\Podstawy Programowania\\Programy\\Kopia przychodni z komentarzami do nauki\\Przychodnia\\Przychodnia.csproj",
         "packagesPath": "C:\\Users\\Luke\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Luke\\source\\repos\\Przychodnia\\obj\\",
+        "outputPath": "d:\\Users\\Luke\\Documents\\WSB\\Podstawy Programowania\\Programy\\Kopia przychodni z komentarzami do nauki\\Przychodnia\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "d:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

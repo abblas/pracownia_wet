@@ -3,8 +3,10 @@
 namespace Przychodnia
 {
     public partial class Menu_Wizyty : Form
-    {
+    {   
+        //Prywatne pole klasy Uzytkownik - zmienna zalogowanyUzytkownik przechowuje aktualnie zalogowanego użytkownika
         private Uzytkownik zalogowanyUzytkownik;
+        //Konstruktor klasy Menu_Wizyty - przyjmujący obiekt zalogowanego użytkownika
         public Menu_Wizyty(Uzytkownik uzytkownik)
         {
             InitializeComponent();
@@ -12,21 +14,20 @@ namespace Przychodnia
             this.zalogowanyUzytkownik = uzytkownik;
             OgraniczDostepDoKontrolek();
         }
+        //Lista przechowująca wizyty
         private List<Wizyta> wizyty = new List<Wizyta>();
         private void Menu_Wizyty_Load(object sender, EventArgs e)
         {
             dateTimePicker_dataWizyty.Format = DateTimePickerFormat.Custom;
-            dateTimePicker_dataWizyty.MinDate = DateTime.Today;
             dateTimePicker_dataWizyty.CustomFormat = " "; // Puste pole na starcie
             dateTimePicker_godzinaWizyty.Format = DateTimePickerFormat.Custom;
             dateTimePicker_godzinaWizyty.CustomFormat = " "; // Puste pole na starcie
             dateTimePicker_dataEdytowanejWizyty.Format = DateTimePickerFormat.Custom;
-            dateTimePicker_dataEdytowanejWizyty.MinDate = DateTime.Today;
             dateTimePicker_dataEdytowanejWizyty.CustomFormat = " "; // Puste pole na starcie
             dateTimePicker_godzinaEdytowanejWizyty.Format = DateTimePickerFormat.Custom;
             dateTimePicker_godzinaEdytowanejWizyty.CustomFormat = " "; // Puste pole na starcie
             OdczytajWizytyZPliku(@"E:\WSB\Baza danych do przychodni\wizyty.txt");
-            dataGridView_listaWizyt.SelectionChanged += new EventHandler(dataGridView_listaWizyt_SelectionChanged);
+            dataGridView_listaWizyt.SelectionChanged += dataGridView_listaWizyt_SelectionChanged;
         }
         private void btn_ListaWizyt_Click(object sender, EventArgs e)
         {
@@ -56,7 +57,8 @@ namespace Przychodnia
             btn_usuwanieWizyty.Visible = false;
             dataGridView_listaWizyt.ClearSelection();
             //Automatyczne generowanie Id wizyty
-            string autoId = wizyty.Count + 1 + "/" + DateTime.Now.Year;
+            int idLiczba = wizyty.Count + 1;
+            string autoId = idLiczba.ToString();
             textBox_IdWizyty.Text = autoId;
             textBox_IdWizyty.ReadOnly = true;
         }
@@ -239,12 +241,11 @@ namespace Przychodnia
             foreach (Wizyta wizyta in wizyty)
             {
                 // Zmniejsz numer ID o 1 dla wizyt po usuniętej
-                string[] czesci = wizyta.id.Split('/');
-                int id = int.Parse(czesci[0]);
-                if (id > int.Parse(idWizyty.Split('/')[0])) // Porównaj tylko numer, nie rok
+                int id = int.Parse(wizyta.id);
+                if (id > int.Parse(idWizyty))
                 {
                     id--;
-                    wizyta.id = id.ToString() + "/" + DateTime.Now.Year.ToString();
+                    wizyta.id = id.ToString();
                 }
             }
             // Odśwież widok tabeli
@@ -270,7 +271,7 @@ namespace Przychodnia
         }
         private void btn_wrocDoMenuGlownego_Click(object sender, EventArgs e)
         {
-            this.Close();
+           this.Close();
         }
         private void ZapiszWizytyDoPliku(string sciezkaPliku)
         {
@@ -336,15 +337,14 @@ namespace Przychodnia
             int maxNumerWizyty = 0;
             foreach (Wizyta wizyta in wizyty)
             {
-                string[] czesci = wizyta.id.Split('/');
-                int id = int.Parse(czesci[0]);
+                int id = int.Parse(wizyta.id);
                 if (id > maxNumerWizyty)
                 {
                     maxNumerWizyty = id;
                 }
             }
             // Nowe ID to maksymalny numer + 1
-            string newId = (maxNumerWizyty + 1).ToString() + "/" + DateTime.Now.Year.ToString();
+            string newId = (maxNumerWizyty + 1).ToString();
             textBox_IdWizyty.Text = newId;
         }
         private void SortujWizyty()
@@ -500,15 +500,11 @@ namespace Przychodnia
         private void OgraniczDostepDoKontrolek()
         {
             // Sprawdzamy rolę użytkownika
-            if (zalogowanyUzytkownik.Rola != "Administrator")
+            if (zalogowanyUzytkownik.Rola == "Lekarz")
             {
                 // Jeśli użytkownik nie jest administratorem, wyłączamy przycisk usuwania wizyty
+                btn_DodajWizyte.Enabled = false;
                 btn_UsunWizyte.Enabled = false;
-            }
-            else
-            {
-                // Jeśli użytkownik jest administratorem, przycisk pozostaje włączony
-                btn_UsunWizyte.Enabled = true;
             }
         }
         public class WczytywanieKlientow

@@ -82,6 +82,28 @@ namespace Przychodnia
                 return base.Zaloguj(podanyLogin, podaneHaslo);
             }
         }
+        public class KierownicyPrzychodni : Uzytkownik
+        {
+            public KierownicyPrzychodni(string login, string haslo)
+                : base(login, haslo, "Kierownik przychodni") { }
+
+            // Nadpisanie metody Zaloguj
+            public override bool Zaloguj(string podanyLogin, string podaneHaslo)
+            {
+                return base.Zaloguj(podanyLogin, podaneHaslo);
+            }
+        }
+        public class KierownicyRecepcji : Uzytkownik
+        {
+            public KierownicyRecepcji(string login, string haslo)
+                : base(login, haslo, "Kierownik recepcji") { }
+
+            // Nadpisanie metody Zaloguj
+            public override bool Zaloguj(string podanyLogin, string podaneHaslo)
+            {
+                return base.Zaloguj(podanyLogin, podaneHaslo);
+            }
+        }
         public class Recepcjoniści : Uzytkownik
         {
             public Recepcjoniści(string login, string haslo)

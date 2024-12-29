@@ -28,7 +28,7 @@ namespace Przychodnia
                 //Jeśli tak to zmienną licznik zwięszkamy o 1
                 licznik++;
                 //I przypisujemy wartość zmiennej licznik + aktualny rok (np 1/2024) do zmiennej lokalnej id. 
-                this.id = licznik + "/" + DateTime.Now.Year;
+                this.id = licznik.ToString();
             }
             else
             {
@@ -46,7 +46,7 @@ namespace Przychodnia
         public static string GenerujNoweId()
         {
             licznik++;
-            return licznik + "/" + DateTime.Now.Year;
+            return licznik.ToString();
         }
     }
 }

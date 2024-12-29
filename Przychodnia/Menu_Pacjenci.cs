@@ -5,10 +5,13 @@ namespace Przychodnia
 {
     public partial class Menu_Pacjenci : Form
     {
-        public Menu_Pacjenci()
+        private Uzytkownik zalogowanyUzytkownik;
+        public Menu_Pacjenci(Uzytkownik uzytkownik)
         {
             InitializeComponent();
             ustawieniaDataGridView_listaPacjentow();
+            this.zalogowanyUzytkownik = uzytkownik;
+            OgraniczDostepDoKontrolek();
         }
         public List<Pacjent> pacjenci = new List<Pacjent>();
         private void Menu_Pacjenci_Load(object sender, EventArgs e)
@@ -16,7 +19,7 @@ namespace Przychodnia
             dateTimePicker_DataUrodzeniaPacjenta.Format = DateTimePickerFormat.Custom;
             dateTimePicker_DataUrodzeniaPacjenta.CustomFormat = " "; // Puste pole na starcie
             OdczytajPacjentowZPliku(@"E:\WSB\Baza danych do przychodni\pacjenci.txt");
-            dataGridView_listaPacjentow.SelectionChanged += new EventHandler(dataGridView_listaPacjentow_SelectionChanged);
+            dataGridView_listaPacjentow.SelectionChanged += dataGridView_listaPacjentow_SelectionChanged;
         }
         private void btn_ListaPacjentow_Click(object sender, EventArgs e)
         {
@@ -406,6 +409,20 @@ namespace Przychodnia
         {
             dateTimePicker_DataUrodzeniaPacjenta.Format = DateTimePickerFormat.Custom;
             dateTimePicker_DataUrodzeniaPacjenta.CustomFormat = "dd.MM.yyyy";
+        }
+        private void OgraniczDostepDoKontrolek()
+        {
+            if (zalogowanyUzytkownik.Rola == "Lekarz")
+            {
+                btn_DodajPacjenta.Enabled = false;
+                btn_UsunPacjenta.Enabled = false;
+                btn_EdytujPacjenta.Enabled = false;
+            }
+            else if (zalogowanyUzytkownik.Rola == "Recepcjonista")
+            {
+                btn_UsunPacjenta.Enabled = false;
+                btn_EdytujPacjenta.Enabled = false;
+            }
         }
     }
 }

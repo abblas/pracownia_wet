@@ -3,16 +3,19 @@ namespace Przychodnia
 {
     public partial class Menu_Lekarze : Form
     {
-        public Menu_Lekarze()
+        private Uzytkownik zalogowanyUzytkownik;
+        public Menu_Lekarze(Uzytkownik uzytkownik)
         {
             InitializeComponent();
             ustawieniaDataGridView_listaLekarzy();
+            this.zalogowanyUzytkownik = uzytkownik;
+            OgraniczDostepDoKontrolek();
         }
         public List<Lekarz> lekarze = new List<Lekarz>();
         private void Menu_Lekarze_Load(object sender, EventArgs e)
         {
             OdczytajLekarzyZPliku(@"E:\WSB\Baza danych do przychodni\lekarze.txt");
-            dataGridView_listaLekarzy.SelectionChanged += new EventHandler(dataGridView_listaLekarzy_SelectionChanged);
+            dataGridView_listaLekarzy.SelectionChanged += dataGridView_listaLekarzy_SelectionChanged;
         }
         private void btn_ListaLekarzy_Click(object sender, EventArgs e)
         {
@@ -322,6 +325,15 @@ namespace Przychodnia
                 btn_edytowanieLekarza.Enabled = false;
                 btn_usuwanieLekarza.Enabled = false;
 
+            }
+        }
+        private void OgraniczDostepDoKontrolek()
+        {
+            if (zalogowanyUzytkownik.Rola != "Administrator" && zalogowanyUzytkownik.Rola != "Kierownik przychodni")
+            {
+                btn_DodajLekarza.Enabled = false;
+                btn_EdytujLekarza.Enabled = false;
+                btn_UsunLekarza.Enabled = false;
             }
         }
     }

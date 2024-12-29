@@ -28,9 +28,7 @@ namespace Przychodnia
                     // Jeœli logowanie siê nie powiod³o, zamykamy aplikacjê
                     Application.Exit();
                 }
-
             }
-
         }
     }
 }
