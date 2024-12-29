@@ -1,0 +1,269 @@
+@startuml diagram_klas
+
+class Program {
+  Main() : void
+}
+
+class Logowanie {
+  + Logowanie()
+  - Logowanie_KeyDown(sender : object, e : EventArgs) : void
+  - Logowanie_Load(sender : object, e : EventArgs) : void
+  - btn_zaloguj_Click(sender : object, e : EventArgs) : void
+  - SprawdzUzytkownika(login : string, haslo : string) : bool
+  + ZalogowanyUzytkownik : Uzytkownik
+}
+
+class Przychodnia {
+  - zalogowanyUzytkownik : Uzytkownik
+  + Przychodnia (uzytkownik) : Uzytkownik
+  - label_VetAnimal_Click(sender : object, e : EventArgs) : void
+  - btn_Wizyty_Click(sender : object, e : EventArgs) : void
+  - btn_Pacjenci_Click(sender : object, e : EventArgs) : void
+  - btn_Wlasciciele_Click(sender : object, e : EventArgs) : void
+  - Przychodnia_Load(sender : object, e : EventArgs) : void
+  - btn_zakonczProgram_Click(sender : object, e : EventArgs) : void
+  - btn_Lekarze_Click(sender : object, e : EventArgs) : void
+  - btn_wyloguj_Click(sender : object, e : EventArgs) : void
+}
+
+class Uzytkownik {
+  - login : string
+  - haslo : string
+  - rola : string
+  + Uzytkownik(rola) : string
+  + Uzytkownik(login : string, haslo : string)
+  + Uzytkownik(login : string, haslo : string, rola : string)
+  + Login : string
+  + Haslo : string
+  + Rola : string
+  + Zaloguj(login : string, haslo : string) : bool
+  + PobierzUzytkownikowZPliku(sciezka : string) : List<Uzytkownik>
+}
+
+class Administratorzy extends Uzytkownik {
+  + Administratorzy(login : string, haslo : string)
+  + Zaloguj(podanyLogin : string, podaneHaslo : string) : bool
+}
+
+class KierownicyPrzychodni extends Uzytkownik {
+  + KierownicyPrzychodni(login : string, haslo : string)
+  + Zaloguj(podanyLogin : string, podaneHaslo : string) : bool
+}
+
+class KierownicyRecepcji extends Uzytkownik {
+  + KierownicyRecepcji(login : string, haslo : string)
+  + Zaloguj(podanyLogin : string, podaneHaslo : string) : bool
+}
+
+class Recepcjonisci extends Uzytkownik {
+  + Recepcjonisci(login : string, haslo : string)
+  + Zaloguj(podanyLogin : string, podaneHaslo : string) : bool
+}
+
+class Lekarze extends Uzytkownik {
+  + Lekarze(login : string, haslo : string)
+  + Zaloguj(podanyLogin : string, podaneHaslo : string) : bool
+}
+
+class Osoba {
+  + id : string
+  + imie : string
+  + nazwisko : string
+  + plec : string
+  + nrTelefonu : string
+  + mail : string
+  + Osoba(imie : string, nazwisko : string)
+  + Osoba(id : string, imie : string, nazwisko : string)
+  + Osoba(id : string, imie : string, nazwisko : string, plec : string, nrTelefonu : string, mail : string)
+}
+
+class Klient extends Osoba {
+  - licznik : int
+  + adres : string
+  + Klient(id : string, imie : string, nazwisko : string, plec : string, adres : string, nrTelefonu : string, mail : string)
+  + Klient(imie : string)
+  + Klient(imie : string, nazwisko : string)
+  + ToString() : string
+  + GenerujNoweId() : string
+}
+
+class Lekarz extends Osoba {
+  - licznik : int
+  + specjalizacja : string
+  + Lekarz(id : string, imie : string, nazwisko : string, plec : string, specjalizacja : string, nrTelefonu : string, mail : string)
+  + Lekarz(imie : string, nazwisko : string)
+  + ToString() : string
+  + GenerujNoweId() : string
+}
+
+class Pacjent {
+  - licznik : int
+  + id : string
+  + imie : string
+  + gatunek : string
+  + rasa : string
+  + plec : string
+  + wiek : string
+  + dataUrodzenia : DateTime
+  + waga : string
+  + wlasciciel : Klient
+  + Pacjent(imie) : string
+  + Pacjent(id : string, imie : string, gatunek : string , rasa : string, plec : string, dataUrodzenia : DateTime, waga : string, wlasciciel : Klient)
+  + Pacjent(id : string, imie : string, wlasciciel : Klient)
+  + ToString() : string
+  + GenerujNoweId() : string
+}
+
+class Wizyta {
+  - licznik : int
+  + id : string
+  + typWizyty : string
+  + dataWizyty : DateTime
+  + godzinaWizyty : DateTime
+  + pacjent : Pacjent
+  + wlasciciel : Klient
+  + lekarz : Lekarz
+  + Wizyta(id : string , typWizyty : string, dataWizyty : DateTime, godzinaWizyty : DateTime, pacjent : Pacjent, wlasciciel : Klient, lekarz : Lekarz)
+  + GenerujNoweId() : string
+}
+
+class Menu_Lekarze {
+  - zalogowanyUzytkownik : Uzytkownik
+  + lekarze : List<Lekarz>
+  + Menu_Lekarze(uzytkownik) : uzytkownik
+  - Menu_Lekarze_Load(sender : object, e : EventArgs) : void
+  - btn_ListaLekarzy_Click(sender : object, e : EventArgs) : void
+  - btn_DodajLekarza_Click(sender : object, e : EventArgs) : void
+  - btn_zapiszLekarza_Click(sender : object, e : EventArgs) : void
+  - btn_EdytujLekarza_Click(sender : object, e : EventArgs) : void
+  - btn_edytowanieLekarza_Click(sender : object, e : EventArgs) : void
+  - btn_zapiszEdytowanegoLekarza_Click(sender : object, e : EventArgs) : void
+  - btn_UsunLekarza_Click(sender : object, e : EventArgs) : void
+  - btn_usuwanieLekarza_Click(sender : object, e : EventArgs) : void
+  - btn_cofnijDoMenuLekarzy_Click(sender : object, e : EventArgs) : void
+  - btn_wrocDoMenuGlownego_Click(sender : object, e : EventArgs) : void
+  - ZapiszLekarzyDoPliku(sciezkaPliku : string) : void
+  - OdczytajLekarzyZPliku(sciezkaPliku : string) : void
+  - wyczyscPola() : void
+  - zwiekszIdLekarza() : void
+  - wyswietlTabelkaLekarzy() : void
+  - pobierzWartosciDoEdycji() : void
+  - ustawieniaDataGridView_listaLekarzy() : void
+  - dataGridView_listaLekarzy_SelectionChanged(sender : object, e : EventArgs) : void
+  - OgraniczDostepDoKontrolek() : void
+}
+
+class Menu_Wizyty {
+  - zalogowanyUzytkownik : Uzytkownik
+  + Menu_Wizyty(uzytkownik) : Uzytkownik
+  - wizyty : List<Wizyta>
+  - Menu_Wizyty_Load(sender : object, e : EventArgs) : void
+  - btn_ListaWizyt_Click(sender : object, e : EventArgs) : void
+  - btn_DodajWizyte_Click(sender : object, e : EventArgs) : void
+  - btn_ZapiszWizyte_Click(sender : object, e : EventArgs) : void
+  - btn_EdytujWizyte_Click(sender : object, e : EventArgs) : void
+  - btn_edycjaWizyty_Click(sender : object, e : EventArgs) : void
+  - btn_zapiszEdytowanaWizyte_Click(sender : object, e : EventArgs) : void
+  - btn_UsunWizyte_Click(sender : object, e : EventArgs) : void
+  - btn_usuwanieWizyty_Click(sender : object, e : EventArgs) : void
+  - btn_cofnijDoMenuWizyt_Click(sender : object, e : EventArgs) : void
+  - btn_wrocDoMenuGlownego_Click(sender : object, e : EventArgs) : void
+  - ZapiszWizytyDoPliku(sciezkaPliku : string) : void
+  - OdczytajWizytyZPliku(sciezkaPliku : string) : void
+  - wyczyscPola() : void
+  - zwiekszIdWizyty() : void
+  - SortujWizyty() : void
+  - wyswietlTabelkaWizyty() : void
+  - pobierzWartosciDoEdycji() : void
+  - PobierzListePacjentow() : void
+  - PobierzListeLekarzy() : void
+  - ustawieniaDataGridView_listaWizyt()
+  - dataGridView_listaWizyt_SelectionChanged(sender : object, e : EventArgs) : void
+  - dateTimePicker_dataWizyty_ValueChanged(sender : object, e : EventArgs) : void
+  - dateTimePicker_dataEdytowanejWizyty_ValueChanged(sender : object, e : EventArgs) : void
+  - comboBox_Pacjent_SelectedIndexChanged(sender : object, e : EventArgs) : void
+  - OgraniczDostepDoKontrolek() : void
+  + WczytywanieKlientow : class
+  + WczytywanieLekarzy : class
+  + WczytywaniePacjentow : class
+}
+
+class Menu_Pacjenci {
+  - zalogowanyUzytkownik : Uzytkownik
+  + pacjenci : List<Pacjent>
+  + Menu_Pacjenci(uzytkownik) : Uzytkownik
+  - Menu_Pacjenci_Load(sender : object, e : EventArgs) : void
+  - btn_ListaPacjentow_Click(sender : object, e : EventArgs) : void
+  - btn_DodajPacjenta_Click(sender : object, e : EventArgs) : void
+  - btn_EdytujPacjenta_Click(sender : object, e : EventArgs) : void
+  - btn_edycjaPacjenta_Click(sender : object, e : EventArgs) : void
+  - btn_zapiszEdytowanegoPacjenta_Click(sender : object, e : EventArgs) : void
+  - btn_UsunPacjenta_Click(sender : object, e : EventArgs) : void
+  - btn_usuwaniePacjenta_Click(sender : object, e : EventArgs) : void
+  - btn_ZapiszPacjenta_Click(sender : object, e : EventArgs) : void
+  - btn_cofnijDoMenuPacjentow_Click(sender : object, e : EventArgs) : void
+  - btn_wrocDoMenuGlownego_Click(sender : object, e : EventArgs) : void
+  - ZapiszPacjentowDoPliku(sciezkaPliku : string) : void
+  - OdczytajPacjentowZPliku(sciezkaPliku : string) : void
+  - wyczyscPola() : void
+  - zwiekszIdPacjenta() : void
+  - wyswietlTabelkaPacjentow() : void
+  - pobierzWartosciDoEdycji() : void
+  - pobierzListeKlientow() : void
+  - ustawieniaDataGridView_listaPacjentow() : void
+  - dataGridView_listaPacjentow_SelectionChanged(sender : object, e : EventArgs) : void
+  - dateTimePicker_DataUrodzeniaPacjenta_ValueChanged(sender : object, e : EventArgs) : void
+  - OgraniczDostepDoKontrolek() : void
+}
+
+class Menu_Wlascicieli {
+  - zalogowanyUzytkownik : Uzytkownik
+  + klienci : List<Klient>
+  + Uzytkownik : List<Uzytkownik>
+  - Menu_Wlascicieli_Load(sender : object, e : EventArgs) : void
+  - btn_ListaWlascicieli_Click(sender : object, e : EventArgs) : void
+  - btn_DodajWłaściciela_Click(sender : object, e : EventArgs) : void
+  - btn_ZapiszWlasciciela_Click(sender : object, e : EventArgs) : void
+  - btn_EdytujWłaściciela_Click(sender : object, e : EventArgs) : void
+  - btn_edycjaWlasciciela_Click(sender : object, e : EventArgs) : void
+  - btn_zapiszEdytowanegoWlasciciela_Click(sender : object, e : EventArgs) : void
+  - btn_UsunWłaściciela_Click(sender : object, e : EventArgs) : void
+  - btn_usuwanieWlasciciela_Click(sender : object, e : EventArgs) : void
+  - btn_cofnijDoMenuWlascicieli_Click(sender : object, e : EventArgs) : void
+  - btn_wrocDoMenuGlownego_Click(sender : object, e : EventArgs) : void
+  - ZapiszWlascicieliDoPliku() : void
+  - OdczytajWlascicieliZPliku() : void
+  - wyczyscPola() : void
+  - zwiekszIdWlasciciela() : void
+  - wyswietlTabelkaWlascicieli() : void
+  - pobierzWartosciDoEdycji() : void
+  - ustawieniaDataGridView_listaWlascicieli() : void
+  - dataGridView_listaWlascicieli_SelectionChanged(sender : object, e : EventArgs) : void
+  - OgraniczDostepDoKontrolek() : void
+}
+
+Program --> Logowanie
+Program --> Przychodnia
+Osoba <|-- Lekarz
+Osoba <|-- Klient
+Klient --> Pacjent : wlasciciel
+Osoba <|-- Uzytkownik
+Uzytkownik <|-- Administratorzy
+Uzytkownik <|-- KierownicyPrzychodni
+Uzytkownik <|-- KierownicyRecepcji
+Uzytkownik <|-- Recepcjonisci
+Uzytkownik <|-- Lekarze
+Pacjent --> Wizyta : pacjent
+Lekarz --> Wizyta : lekarz
+Klient --> Wizyta : wlasciciel
+Przychodnia --> Logowanie
+Przychodnia --> Menu_Wizyty
+Przychodnia --> Menu_Pacjenci
+Przychodnia --> Menu_Wlascicieli
+Przychodnia --> Menu_Lekarze
+Menu_Wizyty --> Wizyta
+Menu_Pacjenci --> Pacjent
+Menu_Wlascicieli --> Klient
+Menu_Lekarze --> Lekarz
+
+@enduml
