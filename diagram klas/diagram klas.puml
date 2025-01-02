@@ -142,8 +142,8 @@ class Menu_Lekarze {
   - btn_usuwanieLekarza_Click(sender : object, e : EventArgs) : void
   - btn_cofnijDoMenuLekarzy_Click(sender : object, e : EventArgs) : void
   - btn_wrocDoMenuGlownego_Click(sender : object, e : EventArgs) : void
-  - ZapiszLekarzyDoPliku(sciezkaPliku : string) : void
-  - OdczytajLekarzyZPliku(sciezkaPliku : string) : void
+  - ZapiszLekarzyDoPliku() : void
+  - OdczytajLekarzyZPliku() : void
   - wyczyscPola() : void
   - zwiekszIdLekarza() : void
   - wyswietlTabelkaLekarzy() : void
@@ -168,8 +168,8 @@ class Menu_Wizyty {
   - btn_usuwanieWizyty_Click(sender : object, e : EventArgs) : void
   - btn_cofnijDoMenuWizyt_Click(sender : object, e : EventArgs) : void
   - btn_wrocDoMenuGlownego_Click(sender : object, e : EventArgs) : void
-  - ZapiszWizytyDoPliku(sciezkaPliku : string) : void
-  - OdczytajWizytyZPliku(sciezkaPliku : string) : void
+  - ZapiszWizytyDoPliku() : void
+  - OdczytajWizytyZPliku() : void
   - wyczyscPola() : void
   - zwiekszIdWizyty() : void
   - SortujWizyty() : void
@@ -203,8 +203,8 @@ class Menu_Pacjenci {
   - btn_ZapiszPacjenta_Click(sender : object, e : EventArgs) : void
   - btn_cofnijDoMenuPacjentow_Click(sender : object, e : EventArgs) : void
   - btn_wrocDoMenuGlownego_Click(sender : object, e : EventArgs) : void
-  - ZapiszPacjentowDoPliku(sciezkaPliku : string) : void
-  - OdczytajPacjentowZPliku(sciezkaPliku : string) : void
+  - ZapiszPacjentowDoPliku() : void
+  - OdczytajPacjentowZPliku() : void
   - wyczyscPola() : void
   - zwiekszIdPacjenta() : void
   - wyswietlTabelkaPacjentow() : void
