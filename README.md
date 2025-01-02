@@ -66,7 +66,7 @@ Każdy użytkownik ma przypisaną do siebie rolę (administrator, kierownik przy
 ## Opis architektury
 Główne elementy paradygmatu obiektowego
 
-1.Struktura klas 
+1. Struktura klas 
   - Klasy modelujące dane:
       Klient.cs – przechowuje informacje o właścicielach pacjentów.
       Lekarz.cs – reprezentuje lekarzy w systemie.
