@@ -6,6 +6,7 @@ namespace Przychodnia
     {   
         //Prywatne pole klasy Uzytkownik - zmienna zalogowanyUzytkownik przechowuje aktualnie zalogowanego użytkownika
         private Uzytkownik zalogowanyUzytkownik;
+        private string sciezkaPliku = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Baza danych", "wizyty.txt");
         //Konstruktor klasy Menu_Wizyty - przyjmujący obiekt zalogowanego użytkownika
         public Menu_Wizyty(Uzytkownik uzytkownik)
         {
@@ -26,7 +27,7 @@ namespace Przychodnia
             dateTimePicker_dataEdytowanejWizyty.CustomFormat = " "; // Puste pole na starcie
             dateTimePicker_godzinaEdytowanejWizyty.Format = DateTimePickerFormat.Custom;
             dateTimePicker_godzinaEdytowanejWizyty.CustomFormat = " "; // Puste pole na starcie
-            OdczytajWizytyZPliku(@"E:\WSB\Baza danych do przychodni\wizyty.txt");
+            OdczytajWizytyZPliku();
             dataGridView_listaWizyt.SelectionChanged += dataGridView_listaWizyt_SelectionChanged;
         }
         private void btn_ListaWizyt_Click(object sender, EventArgs e)
@@ -114,7 +115,7 @@ namespace Przychodnia
             //Zwiększenie ID wizyty
             zwiekszIdWizyty();
             wyswietlTabelkaWizyty();
-            ZapiszWizytyDoPliku(@"E:\WSB\Baza danych do przychodni\wizyty.txt");
+            ZapiszWizytyDoPliku();
         }
         private void btn_EdytujWizyte_Click(object sender, EventArgs e)
         {
@@ -204,7 +205,7 @@ namespace Przychodnia
             dataGridView_listaWizyt.ClearSelection();
             //Zwiększenie ID wizyty
             wyswietlTabelkaWizyty();
-            ZapiszWizytyDoPliku(@"E:\WSB\Baza danych do przychodni\wizyty.txt");
+            ZapiszWizytyDoPliku();
         }
         private void btn_UsunWizyte_Click(object sender, EventArgs e)
         {
@@ -251,7 +252,7 @@ namespace Przychodnia
             // Odśwież widok tabeli
             wyswietlTabelkaWizyty();
             // Zapisz zmiany do pliku
-            ZapiszWizytyDoPliku(@"E:\WSB\Baza danych do przychodni\wizyty.txt");
+            ZapiszWizytyDoPliku();
         }
         private void btn_cofnijDoMenuWizyt_Click(object sender, EventArgs e)
         {
@@ -273,7 +274,7 @@ namespace Przychodnia
         {
            this.Close();
         }
-        private void ZapiszWizytyDoPliku(string sciezkaPliku)
+        private void ZapiszWizytyDoPliku()
         {
             // Przygotowanie listy danych wizyt w formacie tekstowym
             var wizytyText = new List<string>();
@@ -292,7 +293,7 @@ namespace Przychodnia
             File.WriteAllLines(sciezkaPliku, wizytyText);
             dataGridView_listaWizyt.ClearSelection();
         }
-        private void OdczytajWizytyZPliku(string sciezkaPliku)
+        private void OdczytajWizytyZPliku()
         {
             // Odczytujemy wszystkie linie z pliku
             string[] linie = File.ReadAllLines(sciezkaPliku);
@@ -426,7 +427,7 @@ namespace Przychodnia
         }
         private void PobierzListePacjentow()
         {
-            List<Pacjent> pacjenci = WczytywaniePacjentow.WczytajPacjentowIWlascicieli(@"E:\WSB\Baza danych do przychodni\pacjenci.txt");
+            List<Pacjent> pacjenci = WczytywaniePacjentow.WczytajPacjentowIWlascicieli();
             comboBox_Pacjent.DataSource = pacjenci;
             comboBox_Pacjent.DisplayMember = "imie";  // Wyświetlanie imienia pacjenta
             comboBox_pacjentEdytowanejWizyty.DataSource = pacjenci;
@@ -434,7 +435,7 @@ namespace Przychodnia
         }
         private void PobierzListeLekarzy()
         {
-            List<Lekarz> lekarze = WczytywanieLekarzy.wczytajLekarzyZPliku(@"E:\WSB\Baza danych do przychodni\lekarze.txt");
+            List<Lekarz> lekarze = WczytywanieLekarzy.wczytajLekarzyZPliku();
             comboBox_lekarz.DataSource = lekarze;
             comboBox_lekarz.DisplayMember = "imie" + "nazwisko";  // Wyświetlanie imienia pacjenta
             comboBox_lekarzEdytowanejWizyty.DataSource = lekarze;
@@ -509,9 +510,10 @@ namespace Przychodnia
         }
         public class WczytywanieKlientow
         {
-            public static List<Klient> wczytajKlientowZPliku(string sciezkaPliku)
+            public static List<Klient> wczytajKlientowZPliku()
             {
                 List<Klient> klienci = new List<Klient>();
+                string sciezkaPliku = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Baza danych", "klienci.txt");
                 string[] klienciText = File.ReadAllLines(sciezkaPliku);
                 for (int i = 1; i < klienciText.Length; i++)
                 {
@@ -531,9 +533,10 @@ namespace Przychodnia
         }
         public class WczytywanieLekarzy
         {
-            public static List<Lekarz> wczytajLekarzyZPliku(string sciezkaPliku)
+            public static List<Lekarz> wczytajLekarzyZPliku()
             {
                 List<Lekarz> lekarze = new List<Lekarz>();
+                string sciezkaPliku = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Baza danych", "lekarze.txt");
                 string[] lekarzeText = File.ReadAllLines(sciezkaPliku);
                 for (int i = 1; i < lekarzeText.Length; i++)
                 {
@@ -553,10 +556,11 @@ namespace Przychodnia
         }
         public class WczytywaniePacjentow
         {
-            public static List<Pacjent> WczytajPacjentowIWlascicieli(string sciezkaPlikuPacjentow)
+            public static List<Pacjent> WczytajPacjentowIWlascicieli()
             {
                 List<Pacjent> pacjenci = new List<Pacjent>();
-                string[] pacjenciText = File.ReadAllLines(sciezkaPlikuPacjentow);
+                string sciezkaPliku = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Baza danych", "pacjenci.txt");
+                string[] pacjenciText = File.ReadAllLines(sciezkaPliku);
 
                 for (int i = 1; i < pacjenciText.Length; i++) // Pomijamy nagłówek
                 {

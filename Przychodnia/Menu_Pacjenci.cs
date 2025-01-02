@@ -6,6 +6,7 @@ namespace Przychodnia
     public partial class Menu_Pacjenci : Form
     {
         private Uzytkownik zalogowanyUzytkownik;
+        private string sciezkaPliku = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Baza danych", "pacjenci.txt");
         public Menu_Pacjenci(Uzytkownik uzytkownik)
         {
             InitializeComponent();
@@ -18,7 +19,7 @@ namespace Przychodnia
         {
             dateTimePicker_DataUrodzeniaPacjenta.Format = DateTimePickerFormat.Custom;
             dateTimePicker_DataUrodzeniaPacjenta.CustomFormat = " "; // Puste pole na starcie
-            OdczytajPacjentowZPliku(@"E:\WSB\Baza danych do przychodni\pacjenci.txt");
+            OdczytajPacjentowZPliku();
             dataGridView_listaPacjentow.SelectionChanged += dataGridView_listaPacjentow_SelectionChanged;
         }
         private void btn_ListaPacjentow_Click(object sender, EventArgs e)
@@ -56,7 +57,6 @@ namespace Przychodnia
             dataGridView_listaPacjentow.Visible = true;
             label_pacjentDoEdycji.Visible = true;
             dataGridView_listaPacjentow.ClearSelection();
-
         }
         private void btn_edycjaPacjenta_Click(object sender, EventArgs e)
         {
@@ -125,7 +125,7 @@ namespace Przychodnia
             //Czyszczenie pól formularza
             wyczyscPola();
             wyswietlTabelkaPacjentow();
-            ZapiszPacjentowDoPliku(@"E:\WSB\Baza danych do przychodni\pacjenci.txt");
+            ZapiszPacjentowDoPliku();
         }
         private void btn_UsunPacjenta_Click(object sender, EventArgs e)
         {
@@ -172,7 +172,7 @@ namespace Przychodnia
             // Odśwież widok tabeli
             wyswietlTabelkaPacjentow();
             // Zapisz zmiany do pliku
-            ZapiszPacjentowDoPliku(@"E:\WSB\Baza danych do przychodni\pacjenci.txt");
+            ZapiszPacjentowDoPliku();
         }
         private void btn_ZapiszPacjenta_Click(object sender, EventArgs e)
         {
@@ -220,7 +220,7 @@ namespace Przychodnia
             //Zwiększenie ID wizyty
             zwiekszIdPacjenta();
             wyswietlTabelkaPacjentow();
-            ZapiszPacjentowDoPliku(@"E:\WSB\Baza danych do przychodni\pacjenci.txt");
+            ZapiszPacjentowDoPliku();
         }
         private void btn_cofnijDoMenuPacjentow_Click(object sender, EventArgs e)
         {
@@ -239,7 +239,7 @@ namespace Przychodnia
         {
             this.Close();
         }
-        private void ZapiszPacjentowDoPliku(string sciezkaPliku)
+        private void ZapiszPacjentowDoPliku()
         {
             // Przygotowanie listy danych wizyt w formacie tekstowym
             var pacjenciText = new List<string>();
@@ -259,7 +259,7 @@ namespace Przychodnia
 
             MessageBox.Show("Pacjenci zostali zapisani do pliku.");
         }
-        private void OdczytajPacjentowZPliku(string sciezkaPliku)
+        private void OdczytajPacjentowZPliku()
         {
             // Odczytujemy wszystkie linie z pliku
             string[] linie = File.ReadAllLines(sciezkaPliku);
@@ -368,7 +368,7 @@ namespace Przychodnia
         }
         private void pobierzListeKlientow()
         {
-            List<Klient> klienci = WczytywanieKlientow.wczytajKlientowZPliku(@"E:\WSB\Baza danych do przychodni\klienci.txt");
+            List<Klient> klienci = WczytywanieKlientow.wczytajKlientowZPliku();
             comboBox_ListaWlascicieli.DataSource = klienci;
             comboBox_ListaWlascicieli.DisplayMember = "imie" + "nazwisko";
             comboBox_wlascicielEdytowanegoPacjenta.DataSource = klienci;

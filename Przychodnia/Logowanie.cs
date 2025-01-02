@@ -24,7 +24,6 @@ namespace Przychodnia
             this.KeyPreview = true; // Pozwala na przechwytywanie klawiszy w formularzu
             this.KeyDown += Logowanie_KeyDown;
         }
-
         private void Logowanie_KeyDown(object sender, KeyEventArgs e)
         {
             // Sprawdź, czy naciśnięto klawisz Enter
@@ -56,7 +55,7 @@ namespace Przychodnia
         //Wczytaj użytkowników z pliku
         private bool SprawdzUzytkownika(string login, string haslo)
         {
-            string sciezkaPliku = @"E:\WSB\Baza danych do przychodni\uzytkownicy.txt"; // Ścieżka do pliku
+            string sciezkaPliku = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Baza danych", "uzytkownicy.txt"); ; // Ścieżka do pliku
             if (!File.Exists(sciezkaPliku))
             {
                 MessageBox.Show("Plik z użytkownikami nie istnieje.");

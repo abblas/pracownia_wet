@@ -1,0 +1,5 @@
+E:\WSB\Instalka do przychodni\Przychodnia.exe
+E:\WSB\Instalka do przychodni\Przychodnia.dll
+E:\WSB\Instalka do przychodni\Przychodnia.deps.json
+E:\WSB\Instalka do przychodni\Przychodnia.runtimeconfig.json
+E:\WSB\Instalka do przychodni\Przychodnia.pdb

@@ -4,6 +4,7 @@ namespace Przychodnia
     public partial class Menu_Wlascicieli : Form
     {
         private Uzytkownik zalogowanyUzytkownik;
+        private string sciezkaPliku = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Baza danych", "klienci.txt");
         public Menu_Wlascicieli(Uzytkownik uzytkownik)
         {
             InitializeComponent();
@@ -15,7 +16,7 @@ namespace Przychodnia
         public List<Uzytkownik> uzytkownicy = new List<Uzytkownik>();
         private void Menu_Wlascicieli_Load(object sender, EventArgs e)
         {
-            OdczytajWlascicieliZPliku(@"E:\WSB\Baza danych do przychodni\klienci.txt");
+            OdczytajWlascicieliZPliku();
             dataGridView_listaWlascicieli.SelectionChanged += dataGridView_listaWlascicieli_SelectionChanged;
         }
         private void btn_ListaWlascicieli_Click(object sender, EventArgs e)
@@ -64,7 +65,7 @@ namespace Przychodnia
             //Zwiększenie ID wizyty
             zwiekszIdWlasciciela();
             wyswietlTabelkaWlascicieli();
-            ZapiszWlascicieliDoPliku(@"E:\WSB\Baza danych do przychodni\klienci.txt");
+            ZapiszWlascicieliDoPliku();
         }
         private void btn_EdytujWłaściciela_Click(object sender, EventArgs e)
         {
@@ -74,13 +75,6 @@ namespace Przychodnia
             btn_edycjaWlasciciela.Visible = true;
             label_wlascicielDoEdycji.Visible = true;
             dataGridView_listaWlascicieli.ClearSelection();
-
-            //Uzytkownik uzytkownik = new Uzytkownik(rola)
-            //    string rola = 
-            //if ()
-            //    {
-
-            //})
         }
         private void btn_edycjaWlasciciela_Click(object sender, EventArgs e)
         {
@@ -122,7 +116,7 @@ namespace Przychodnia
             }
             wyczyscPola();
             wyswietlTabelkaWlascicieli();
-            ZapiszWlascicieliDoPliku(@"E:\WSB\Baza danych do przychodni\klienci.txt");
+            ZapiszWlascicieliDoPliku();
         }
         private void btn_UsunWłaściciela_Click(object sender, EventArgs e)
         {
@@ -167,7 +161,7 @@ namespace Przychodnia
             // Odśwież widok tabeli
             wyswietlTabelkaWlascicieli();
             // Zapisz zmiany do pliku
-            ZapiszWlascicieliDoPliku(@"E:\WSB\Baza danych do przychodni\klienci.txt");
+            ZapiszWlascicieliDoPliku();
         }
         private void btn_cofnijDoMenuWlascicieli_Click(object sender, EventArgs e)
         {
@@ -186,7 +180,7 @@ namespace Przychodnia
         {
             this.Close();
         }
-        private void ZapiszWlascicieliDoPliku(string sciezkaPliku)
+        private void ZapiszWlascicieliDoPliku()
         {
             // Przygotowanie listy danych wizyt w formacie tekstowym
             var klienciText = new List<string>();
@@ -204,7 +198,7 @@ namespace Przychodnia
             File.WriteAllLines(sciezkaPliku, klienciText);
 
         }
-        private void OdczytajWlascicieliZPliku(string sciezkaPliku)
+        private void OdczytajWlascicieliZPliku()
         {
             // Odczytujemy wszystkie linie z pliku
             string[] linie = File.ReadAllLines(sciezkaPliku);

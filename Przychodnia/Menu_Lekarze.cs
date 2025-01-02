@@ -4,6 +4,7 @@ namespace Przychodnia
     public partial class Menu_Lekarze : Form
     {
         private Uzytkownik zalogowanyUzytkownik;
+        private string sciezkaPliku = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Baza danych", "lekarze.txt");
         public Menu_Lekarze(Uzytkownik uzytkownik)
         {
             InitializeComponent();
@@ -14,7 +15,7 @@ namespace Przychodnia
         public List<Lekarz> lekarze = new List<Lekarz>();
         private void Menu_Lekarze_Load(object sender, EventArgs e)
         {
-            OdczytajLekarzyZPliku(@"E:\WSB\Baza danych do przychodni\lekarze.txt");
+            OdczytajLekarzyZPliku();
             dataGridView_listaLekarzy.SelectionChanged += dataGridView_listaLekarzy_SelectionChanged;
         }
         private void btn_ListaLekarzy_Click(object sender, EventArgs e)
@@ -63,7 +64,7 @@ namespace Przychodnia
             //Zwiększenie ID wizyty
             zwiekszIdLekarza();
             wyswietlTabelkaLekarzy();
-            ZapiszLekarzyDoPliku(@"E:\WSB\Baza danych do przychodni\lekarze.txt");
+            ZapiszLekarzyDoPliku();
         }
         private void btn_EdytujLekarza_Click(object sender, EventArgs e)
         {
@@ -114,7 +115,7 @@ namespace Przychodnia
             }
             wyczyscPola();
             wyswietlTabelkaLekarzy();
-            ZapiszLekarzyDoPliku(@"E:\WSB\Baza danych do przychodni\lekarze.txt");
+            ZapiszLekarzyDoPliku();
         }
         private void btn_UsunLekarza_Click(object sender, EventArgs e)
         {
@@ -159,7 +160,7 @@ namespace Przychodnia
             // Odśwież widok tabeli
             wyswietlTabelkaLekarzy();
             // Zapisz zmiany do pliku
-            ZapiszLekarzyDoPliku(@"E:\WSB\Baza danych do przychodni\lekarze.txt");
+            ZapiszLekarzyDoPliku();
         }
         private void btn_cofnijDoMenuLekarzy_Click(object sender, EventArgs e)
         {
@@ -179,7 +180,7 @@ namespace Przychodnia
         {
             this.Close();
         }
-        private void ZapiszLekarzyDoPliku(string sciezkaPliku)
+        private void ZapiszLekarzyDoPliku()
         {
             // Przygotowanie listy danych wizyt w formacie tekstowym
             var lekarzeText = new List<string>();
@@ -196,7 +197,7 @@ namespace Przychodnia
             // Zapisujemy całą listę wizyt do pliku
             File.WriteAllLines(sciezkaPliku, lekarzeText);
         }
-        private void OdczytajLekarzyZPliku(string sciezkaPliku)
+        private void OdczytajLekarzyZPliku()
         {
             // Odczytujemy wszystkie linie z pliku
             string[] linie = File.ReadAllLines(sciezkaPliku);
