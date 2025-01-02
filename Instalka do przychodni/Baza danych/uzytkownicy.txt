@@ -1,0 +1,5 @@
+admin;123;Administrator
+achmielewska;Zebra123;Kierownik przychodni
+pzak;Kosmos!56;Kierownik recepcji
+alas;Kwiat2024;Recepcjonista
+mkran;qwerty098;Lekarz

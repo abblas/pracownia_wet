@@ -1,0 +1,8 @@
+IdWizyty-TypWizyty-DataWizyty-GodzinaWizyty-Pacjent-Wlasciciel-Lekarz
+1-Zabieg-18.12.2024-21:57-Diego-Łukasz Chodzicki-Paweł Olszewski
+3-Badanie-24.12.2024-20:24-Diego-Łukasz Chodzicki-Paweł Olszewski
+2-Szczepienie-25.12.2024-11:06-Lusia-Aleksandra Piotrowska-Barbara Stępień
+6-Szczepienie-26.12.2024-10:49-Luna-Maria Nowak-Barbara Stępień
+4-Szczepienie-31.12.2024-10:46-Misiek-Adam Król-Joanna Kotwica
+5-Badanie-03.01.2025-10:46-Nero-Sylwia Nowak-Wojciech Frytka
+7-Zabieg-30.01.2025-18:15-Lusia-Aleksandra Piotrowska-Beata Baran

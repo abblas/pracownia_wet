@@ -1,0 +1,33 @@
+IdPacjenta-Imie-Gatunek-Rasa-Plec-dataUrodzenia-Waga-Wlasciciel
+1-Diego-Kot-Europejski-Samiec-30.07.2020-5.3-Łukasz Chodzicki
+2-Azor-Pies-Owczarek Niemiecki-Samiec-14.03.2019-32.5-Jan Kowalski
+3-Luna-Kot-Maine Coon-Samica-22.07.2020-4.8-Maria Nowak
+4-Riko-Papuga-Ara-Samiec-03.11.2018-0.9-Piotr Wiśniewski
+5-Bella-Pies-Labrador retriever-Samica-12.01.2021-28.3-Anna Zielińska
+6-Max-Chomik-Syryjski-Samiec-15.06.2023-0.13-Karolina Wójcik
+7-Słoneczko-Świnka morska-Gładkowłosa-Samica-09.05.2022-1.1-Michał Kaczmarek
+8-Tobi-Królik-Mini rex-Samiec-19.08.2021-2.4-Agnieszka Wiśniewska
+9-Nemo-Ryba-Błazenek-Samiec-15.03.2023-0.02-Barbara Lewandowska
+10-Kiwi-Papuga-Falista-Samica-01.12.2022-0.04-Andrzej Kamiński
+11-Tyson-Wąż-Pyton Królewski-Samiec-27.04.2017-3.2-Tomasz Woźniak
+12-Turbo-Żółw-Grecki-Samiec-19.07.2015-1.4-Katarzyna Wojciechowska
+13-Misiek-Kot-Brytyjski krótkowłosy-Samiec-25.02.2020-5.2-Adam Król
+14-Tosia-Pies-Golder retriever-Samica-10.12.2019-30.1-Joanna Szymańska
+15-Felix-Jaszczurka-Agama brodata-Samiec-22.06.2021-0.8-Łukasz Jabłoński
+16-Lusia-Pająk-Ptasznik różowy-Samica-15.11.2920-0.02-Aleksandra Piotrowska
+17-Reksio-Pies-Jack Russell terier-Samiec-18.10.2022-8.7-Marcin Grabowski
+18-Coco-Papuga-Kakadu-Samica-01.05.2019-1.2-Marta Kowalczyk
+19-Leo-Królik-Lew morski-Samiec-05.09.2022-3.1-Krzysztof Zalewski
+20-Zara-Świnka morska-Coronet-Samica-30.11.2021-1.3-Dorota Rutkowska
+21-Oreo-Kot-Ragdoll-Samica-07.07.2018-5.7-Magdalena Stępień
+22-Rocky-Pies-Beagle-Samiec-10.06.2020-12.1-Damian Wróbel
+23-Figa-Kot-Syberyjski-Samica-21.09.2019-3.9-Beata Olszewska
+24-Hugo-Pies-Dalmatyńczyk-Samiec-15.02.2018-27.6-Paweł Lis
+25-Milka-Królik-Baran francuski-Samica-25.03.2022-3.5-Renata Pawlik
+26-Nero-Wąż-Boa dusiciel-Samiec-03.04.2016-4.8-Sylwia Nowak
+27-Mika-Papuga-Amazonka-Samica-08.10.2020-0.6-Natalia Czerwińska
+28-Tosiek-Żółw-Czerwonolicy-Samiec-12.05.2014-1.9-Bartosz Żukowski
+29-Gaja-Świnka morska-Peruwiańska-Samica-19.07.2021-1.2-Daria Malinowska
+30-Simba-Pies-Chow Chow-Samiec-02.11.2017-26.3-Michał Baran
+31-Kulka-Jaszczurka-Aryjska-Samica-05.11.2024-3-Natalia Kos
+32-Miki-Królik-Mini rex-Samiec-06.02.2024-1.6-Karolina Wójcik
