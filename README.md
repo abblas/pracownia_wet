@@ -59,6 +59,9 @@ Każdy użytkownik ma przypisaną do siebie rolę (administrator, kierownik przy
 6. Zarządzanie lekarzami: Wyświetlanie, dodawanie, edycja i usuwanie lekarzy.
    
 ## Instalacja i uruchomienie
+1. Należy pobrać zawartość folderu "Instalka do przychodni"
+2. Po pobraniu folderu wraz z jego zawartością należy uruchomić plik o nazwie "przychodnia.exe"
+3. Program gotowy do użycia
 
 ## Opis architektury
 Główne elementy paradygmatu obiektowego
