@@ -20,22 +20,22 @@ Każdy użytkownik ma przypisaną do siebie rolę (administrator, kierownik przy
    - Obsługa pięciu ról: Administrator, Kierownik przychodni, Kierownik recepcji, Lekarz
      
 2. Zarządzanie wizytami
-   - Dodawanie nowych wizyt (dostępne dla wszystkich użytkowników prócz Lekarzy)
+   - Dodawanie nowych wizyt (dostępne dla wszystkich użytkowników oprócz Lekarzy)
    - Edycja istniejących wizyt
-   - Usuwanie wizyt (dostępne dla wszystkich użytkowników prócz Lekarzy)
+   - Usuwanie wizyt (dostępne dla wszystkich użytkowników oprócz Lekarzy)
    - Wyświetlanie listy wizyt
   
 3. Zarządzanie pacjentami
-   - Dodanie nowych pacjentów (dostępne dla wszystkich użytkowników prócz Lekarzy)
+   - Dodanie nowych pacjentów (dostępne dla wszystkich użytkowników oprócz Lekarzy)
    - Przypisywanie właścicieli do pacjentów
-   - Edycja istniejących pacjentów (dostępne dla wszystkich użytkowników prócz Lekarzy i Recepcjonistów)
-   - Usuwanie pacjentów (dostępne dla wszystkich użytkowników prócz Lekarzy i Recepcjonistów)
+   - Edycja istniejących pacjentów (dostępne dla wszystkich użytkowników oprócz Lekarzy i Recepcjonistów)
+   - Usuwanie pacjentów (dostępne dla wszystkich użytkowników oprócz Lekarzy i Recepcjonistów)
    - Wyświetlanie listy pacjentów
   
 4. Zarządzanie właścicielami
-   - Dodanie nowych właścicieli (dostępne dla wszystkich użytkowników prócz Lekarzy)
-   - Edycja istniejących właścicieli (dostępne dla wszystkich użytkowników prócz Lekarzy i Recepcjonistów)
-   - Usuwanie właścicieli (dostępne dla wszystkich użytkowników prócz Lekarzy i Recepcjonistów)
+   - Dodanie nowych właścicieli (dostępne dla wszystkich użytkowników oprócz Lekarzy)
+   - Edycja istniejących właścicieli (dostępne dla wszystkich użytkowników oprócz Lekarzy i Recepcjonistów)
+   - Usuwanie właścicieli (dostępne dla wszystkich użytkowników oprócz Lekarzy i Recepcjonistów)
    - Wyświetlanie listy właścicieli
 
 5. Zarządzanie lekarzami
