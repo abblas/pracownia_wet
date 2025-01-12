@@ -17,7 +17,7 @@ Każdy użytkownik ma przypisaną do siebie rolę (administrator, kierownik przy
 ## Lista funkcjonalności
 1. Logowanie
    - Autoryzacja użytkowników w oparciu o login, hasło, dostęp poprzez odpowiednią rolę.
-   - Obsługa pięciu ról: Administrator, Kierownik przychodni, Kierownik recepcji, Lekarz
+   - Obsługa pięciu ról: Administrator, Kierownik przychodni, Kierownik recepcji, recepcjonista oraz Lekarz
      
 2. Zarządzanie wizytami
    - Dodawanie nowych wizyt (dostępne dla wszystkich użytkowników oprócz Lekarzy)
